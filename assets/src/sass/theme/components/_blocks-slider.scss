@@ -243,7 +243,7 @@ hr {
           }
           h2 {
             color: $color-white;
-            font-family: "extrabold", Helvetica, Arial, sans-serif;
+            @extend %font-extrabold;
             margin-left: 0;
             margin-right: 0;
             @extend %massive;
@@ -305,7 +305,7 @@ hr {
       padding-bottom: $spacer-sm * 2;
     }
     h1 {
-      font-family: "extrabold", Helvetica, Arial, sans-serif;
+      @extend %font-extrabold;
       margin: 0;
       padding: 0;
       @extend %ultralarge;
@@ -449,7 +449,7 @@ hr {
           }
           .cards-title p {
             color: $color-white;
-            font-family: "extrabold", Helvetica, Arial, sans-serif;
+            @extend %font-extrabold;
             @extend %small;
           }
           .cards-text p {
@@ -525,7 +525,7 @@ hr {
     }
     .text-column-title p {
       @extend %ultralarge;
-      font-family: "extrabold", Helvetica, Arial, sans-serif;
+      @extend %font-extrabold;
       margin-bottom: $spacer;
       @include media-breakpoint-up(xl) {
         margin-bottom: $spacer-xl;
@@ -614,7 +614,7 @@ hr {
       padding: $spacer-sm * 3;
     }
     h1 {
-      font-family: "extrabold", Helvetica, Arial, sans-serif;
+      @extend %font-extrabold;
       margin: 0;
       padding: 0;
       @extend %ultralarge;
@@ -746,7 +746,7 @@ hr {
         .item-title {
           p {
             color: $color-white;
-            font-family: "extrabold", Helvetica, Arial, sans-serif;
+            @extend %font-extrabold;
             margin-bottom: 0;
             @extend %large;
           }
@@ -789,7 +789,7 @@ hr {
       padding: 0;
       text-align: center;
       color: $color-white;
-      font-family: "extrabold", Helvetica, Arial, sans-serif;
+      @extend %font-extrabold;
       @extend %ultralarge;
     }
   }
@@ -829,7 +829,7 @@ hr {
         }
         .item-title p {
           color: $color-white;
-          font-family: "extrabold", Helvetica, Arial, sans-serif;
+          @extend %font-extrabold;
           @extend %large;
         }
       }

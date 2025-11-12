@@ -1,5 +1,30 @@
 @use "../settings" as *;
 
+%font-base {
+  font-family: $font-family-base;
+  font-style: normal;
+}
+
+%font-regular {
+  @extend %font-base;
+  font-weight: $font-regular;
+}
+
+%font-medium {
+  @extend %font-base;
+  font-weight: $font-medium;
+}
+
+%font-bold {
+  @extend %font-base;
+  font-weight: $font-bold;
+}
+
+%font-extrabold {
+  @extend %font-base;
+  font-weight: $font-extrabold;
+}
+
 %micro {
   font-size: $micro;
   line-height: $micro-lineh;
@@ -33,7 +58,6 @@
 %small {
   font-size: $small;
   line-height: $small-lineh;
-  font-variation-settings: "wdth" 98;
 
   @include media-breakpoint-up(xl) {
     font-size: $small-xl;
@@ -129,7 +153,7 @@
 }
 
 * strong {
-  font-variation-settings: "wght" $font-bold;
+  @extend %font-bold;
 }
 
 h1 {

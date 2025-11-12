@@ -39,7 +39,7 @@
       margin: 0;
       padding: 0;
       color: $color-black;
-      font-family: "extrabold", Helvetica, Arial, sans-serif;
+      @extend %font-extrabold;
       @extend %ultralarge;
     }
   }
@@ -71,7 +71,7 @@
       color: $color-black;
       text-align: center;
       font-size: 32px;
-      font-family: "extrabold", Helvetica, Arial, sans-serif;
+      @extend %font-extrabold;
       @extend %extrasmall;
       a {
         color: $color-black;

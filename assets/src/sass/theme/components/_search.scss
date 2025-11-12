@@ -69,9 +69,8 @@
     background-color: $color-black;
     color: $color-white;
     display: inline-block;
-    font-weight: 700;
     text-transform: uppercase;
-    font-family: "extrabold", Helvetica, Arial, sans-serif;
+    @extend %font-bold;
     margin: 0;
     padding: $spacer / 2 $spacer * 1.5;
     @include media-breakpoint-up(xl) {
@@ -129,7 +128,7 @@ a.result {
   color: $color-white;
   display: inline-block;
   text-transform: uppercase;
-  font-family: "extrabold", Helvetica, Arial, sans-serif;
+  @extend %font-bold;
   padding: 7.5px 11.5px!important;
   margin: 0 $spacer;
   @include media-breakpoint-up(xl) {

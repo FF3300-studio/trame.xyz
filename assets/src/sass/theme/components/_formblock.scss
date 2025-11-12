@@ -98,8 +98,8 @@
 			margin-left: 0!important;
 			@extend %small;
 			padding: $spacer/2 $spacer*1.5;
-			text-transform: uppercase;
-			font-family: 'extrabold', Helvetica, Arial, sans-serif;
+                        text-transform: uppercase;
+                        @extend %font-bold;
 			@include media-breakpoint-up(xl) { 
 				margin: 0px $spacer-xl;
 				padding: $spacer-xl/2 $spacer-xl*1.5;

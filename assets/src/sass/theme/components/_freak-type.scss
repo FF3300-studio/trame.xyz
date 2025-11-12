@@ -6,7 +6,7 @@
   margin-top: $spacer/2;
 }
 .logotype_container * {
-  font-family: "freak";
+  @extend %font-extrabold;
   @include media-breakpoint-down(sm) {
     font-size: 20px !important;
   }
@@ -18,7 +18,7 @@
 * h3 span,
 * h4 span,
 * h5 span {
-  font-family: "freak";
+  @extend %font-extrabold;
   min-width: unset !important;
   min-height: fit-content!important;
   &.zero_uno {
@@ -44,6 +44,7 @@
   }
 }
 .freak {
+  @extend %font-extrabold;
   font-size: 2.66vw !important;
   min-height: 2.33vw;
   @include media-breakpoint-down(sm) {

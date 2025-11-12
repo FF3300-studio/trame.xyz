@@ -68,7 +68,7 @@ a {
 }
 
 body {
-  font-family: "medium", Helvetica, Arial, sans-serif;
+  @extend %font-regular;
   @extend %small;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
