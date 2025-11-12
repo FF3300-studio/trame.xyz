@@ -1,0 +1,50 @@
+# File di sistema
+.DS_Store
+Thumbs.db
+Icon?
+
+# Configurazioni editor/IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.swp
+*.swo
+
+# Dipendenze e cache Node
+node_modules/
+npm-debug.log*
+.yarn*
+.pnp.*
+.vite/
+
+# Output Vite/Sass
+assets/build/
+assets/build/**/*
+assets/js/*.map
+
+# Dipendenze Composer
+vendor/
+kirby/vendor/
+
+# Contenuti generati da Kirby
+content/
+media/
+storage/
+site/cache/
+!site/cache/index.html
+site/accounts/
+!site/accounts/index.html
+site/sessions/
+!site/sessions/index.html
+
+# Config locali e log
+site/config/_local.php
+site/config/*.log
+site/config/*.cache
+site/config/.license
+php_errorlog
+*.log
+
+# Variabili ambiente
+.env
+.env.*
