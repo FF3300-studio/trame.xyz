@@ -89,7 +89,7 @@ function build_url($base, $merge = []) {
     <ul class="filter-group">
       <li>
         <a class="tag"
-          style="border-radius:0.25vw;font-size:14px;font-family:'xanti';padding:3px 6px;margin-right:3px;border:1px solid black;background-color:black;color:white; padding-bottom: 2px!important;"
+          style="border-radius:0.25vw;font-size:14px;font-family:'Geist','Helvetica Neue',Helvetica,Arial,sans-serif;padding:3px 6px;margin-right:3px;border:1px solid black;background-color:black;color:white; padding-bottom: 2px!important;"
           href="<?= $page->url() ?>" title="tutti">Tutti</a>
       </li>
 
