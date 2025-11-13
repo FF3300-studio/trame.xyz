@@ -12,17 +12,6 @@ Icon?
 
 # Dipendenze installate in locale
 node_modules/
-npm-debug.log*
-.yarn*
-.pnp.*
-.vite/
-
-# Output Vite/Sass
-assets/build/
-assets/build/**/*
-assets/js/*.map
-
-# Dipendenze Composer
 vendor/
 kirby/vendor/
 
