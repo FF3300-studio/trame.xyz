@@ -115,6 +115,7 @@
 // Tag
 // =========================
 span.tag {
+  font-family: $font-family-base;
   font-size: 75%;
   min-width: 0;
   flex-grow: 0;
@@ -131,6 +132,13 @@ span.tag {
     color: gray !important;
     border-color: gray !important;
   }
+}
+
+.related-parent-title {
+  font-family: $font-family-base;
+  font-weight: $font-medium;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
 }
 // =========================
 // Related & Siblings
