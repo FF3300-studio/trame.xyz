@@ -11,6 +11,7 @@ Icon?
 *.swo
 
 # Dipendenze e cache Node
+# Dipendenze installate in locale
 node_modules/
 npm-debug.log*
 .yarn*
@@ -38,6 +39,7 @@ site/sessions/
 !site/sessions/index.html
 
 # Config locali e log
+# Configurazioni e log locali
 site/config/_local.php
 site/config/*.log
 site/config/*.cache
