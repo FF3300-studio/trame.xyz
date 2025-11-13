@@ -1,12 +1,13 @@
+@use "sass:math";
 @use "../shared" as *;
-@import "../base/typography";
+@use "../base/typography" as typo;
 
 /* FREAK GROTESK TYPOGRAPHY */
 .logotype_container {
-  margin-top: $spacer/2;
+  margin-top: math.div($spacer, 2);
 }
 .logotype_container * {
-  @extend %font-extrabold;
+  @include typo.font-extrabold;
   @include media-breakpoint-down(sm) {
     font-size: 20px !important;
   }
@@ -18,7 +19,7 @@
 * h3 span,
 * h4 span,
 * h5 span {
-  @extend %font-extrabold;
+  @include typo.font-extrabold;
   min-width: unset !important;
   min-height: fit-content!important;
   &.zero_uno {
@@ -44,7 +45,7 @@
   }
 }
 .freak {
-  @extend %font-extrabold;
+  @include typo.font-extrabold;
   font-size: 2.66vw !important;
   min-height: 2.33vw;
   @include media-breakpoint-down(sm) {
@@ -109,7 +110,7 @@ h2.title{
   width: fit-content;
   margin-bottom: $spacer!important;
   @include media-breakpoint-up(xl) {
-    margin-bottom: $spacer-xl/2!important;
+    margin-bottom: math.div($spacer-xl, 2)!important;
   }
   @include media-breakpoint-down(sm) {
     margin-bottom: $spacer-sm*1.5!important;

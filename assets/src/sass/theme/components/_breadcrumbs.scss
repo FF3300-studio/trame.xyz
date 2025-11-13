@@ -1,5 +1,6 @@
+@use "sass:math";
 @use "../shared" as *;
-@import "../base/typography";
+@use "../base/typography" as typo;
 
 /* BREADCRUMBS / PAGE NAVIGATOR */
 /* CSS relativo al navigatore di pagina */
@@ -9,7 +10,7 @@
   background-color: $color-primary;
   border-top: 2px solid $color-black;
   border-bottom: 2px solid $color-black;
-  @extend %micro;
+  @include typo.micro;
   @include media-breakpoint-up(xl) {
     padding: $spacer-xl $spacer-xl * 3;
   }
@@ -29,23 +30,23 @@
         display: inline-block;
         position: relative;
         top: 0;
-        margin: 0 $spacer / 2;
+        margin: 0 math.div($spacer, 2);
         @include media-breakpoint-up(xl) {
-          margin: 0 $spacer-xl / 2;
+          margin: 0 math.div($spacer-xl, 2);
         }
         @include media-breakpoint-down(sm) {
-          margin: 0 $spacer-sm / 2;
+          margin: 0 math.div($spacer-sm, 2);
         }
       }
       a,
       .current {
-        @extend %micro;
+        @include typo.micro;
         color: $color-black;
         text-transform: uppercase;
         margin-bottom: 0;
       }
       .current {
-        @extend %font-bold;
+        @include typo.font-bold;
       }
     }
   }

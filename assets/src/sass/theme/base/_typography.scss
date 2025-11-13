@@ -1,31 +1,32 @@
+@use "sass:math";
 @use "../settings" as *;
 
-%font-base {
+@mixin font-base {
   font-family: $font-family-base;
   font-style: normal;
 }
 
-%font-regular {
-  @extend %font-base;
+@mixin font-regular {
+  @include font-base;
   font-weight: $font-regular;
 }
 
-%font-medium {
-  @extend %font-base;
+@mixin font-medium {
+  @include font-base;
   font-weight: $font-medium;
 }
 
-%font-bold {
-  @extend %font-base;
+@mixin font-bold {
+  @include font-base;
   font-weight: $font-bold;
 }
 
-%font-extrabold {
-  @extend %font-base;
+@mixin font-extrabold {
+  @include font-base;
   font-weight: $font-extrabold;
 }
 
-%micro {
+@mixin micro {
   font-size: $micro;
   line-height: $micro-lineh;
 
@@ -40,7 +41,7 @@
   }
 }
 
-%extrasmall {
+@mixin extrasmall {
   font-size: $extrasmall;
   line-height: $extrasmall-lineh;
 
@@ -55,7 +56,7 @@
   }
 }
 
-%small {
+@mixin small {
   font-size: $small;
   line-height: $small-lineh;
 
@@ -70,7 +71,7 @@
   }
 }
 
-%medium {
+@mixin medium {
   font-size: $medium;
   line-height: $medium-lineh;
 
@@ -85,7 +86,7 @@
   }
 }
 
-%large {
+@mixin large {
   font-size: $large;
   line-height: $large-lineh;
 
@@ -100,7 +101,7 @@
   }
 }
 
-%extralarge {
+@mixin extralarge {
   font-size: $extralarge;
   line-height: $extralarge-lineh;
 
@@ -115,7 +116,7 @@
   }
 }
 
-%ultralarge {
+@mixin ultralarge {
   font-size: $ultralarge;
   line-height: $ultralarge-lineh;
 
@@ -130,7 +131,7 @@
   }
 }
 
-%massive {
+@mixin massive {
   font-size: $massive;
   line-height: $massive-lineh;
 
@@ -145,35 +146,35 @@
   }
 }
 
-%button {
-  padding: $spacer / 2.5 $spacer;
-  @extend %extrasmall;
+@mixin button {
+  padding: math.div($spacer, 2.5) $spacer;
+  @include extrasmall;
   border-radius: 100vw;
   border: 2px solid $color-black;
 }
 
 * strong {
-  @extend %font-bold;
+  @include font-bold;
 }
 
 h1 {
-  @extend %massive;
+  @include massive;
 }
 
 h2 {
-  @extend %ultralarge;
+  @include ultralarge;
 }
 
 h3 {
-  @extend %extralarge;
+  @include extralarge;
 }
 
 h4 {
-  @extend %large;
+  @include large;
 }
 
 h5 {
-  @extend %medium;
+  @include medium;
 }
 
 h1,

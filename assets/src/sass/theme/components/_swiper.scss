@@ -1,5 +1,5 @@
 @use "../shared" as *;
-@import "../base/typography";
+@use "../base/typography" as typo;
 
 /* SWIPER CONFIGURATION */
 /* CSS relativo al componente SWIPER SLIDER JS */
@@ -60,7 +60,7 @@ h2.text {
     h2 {
       font-size: 4vw;
       line-height: 1.2em;
-      @extend %font-extrabold;
+      @include typo.font-extrabold;
       margin-bottom: calc(var(--margin-bottom) * 3);
       @media screen and (max-width: 950px) {
         font-size: 32px;
@@ -71,10 +71,10 @@ h2.text {
     p {
       font-size: 24px;
       line-height: 1.33em;
-      @extend %font-regular;
+      @include typo.font-regular;
       color: var(--color-white);
       strong {
-        @extend %font-bold;
+        @include typo.font-bold;
       }
       @media screen and (max-width: 1080px) {
         font-size: 16px;
@@ -106,7 +106,7 @@ h2.text {
     max-width: 100%;
   }
   p {
-    @extend %font-medium;
+    @include typo.font-medium;
     font-size: 24px;
     line-height: 1.2em;
   }

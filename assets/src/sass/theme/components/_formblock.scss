@@ -1,5 +1,6 @@
+@use "sass:math";
 @use "../shared" as *;
-@import "../base/typography";
+@use "../base/typography" as typo;
 
 /* FORMBLOCK PLUGIN */
 .formblock {
@@ -51,16 +52,16 @@
 		}
 		label {
 			text-transform: uppercase;
-			@extend %extrasmall;
+			@include typo.extrasmall;
 			width: calc(100% - $spacer*2);
 			margin: $spacer;
 		}
 		input, textarea {
 			background-color: $color-white;
 			border: 2px solid $color-black;
-			padding: $spacer/2;
+			padding: math.div($spacer, 2);
 			border-radius: 100vw;
-			@extend %micro;
+			@include typo.micro;
 			width: auto!important;
 			min-width: calc(100% - 30px)!important;
 			&.formfield__radio, &.formfield__checkbox{
@@ -69,11 +70,11 @@
 			margin: 0 auto;
 			font-size: 120%;
 			@include media-breakpoint-up(xl) { 
-				padding: $spacer-xl/2;
+				padding: math.div($spacer-xl, 2);
 			}
 			@include media-breakpoint-down(sm) { 
-				padding: $spacer-sm/2;
-				margin: $spacer-sm/2!important;
+				padding: math.div($spacer-sm, 2);
+				margin: math.div($spacer-sm, 2)!important;
 			}
 		}
 		textarea{
@@ -90,23 +91,23 @@
 		margin-top: $spacer;
 		margin-bottom: $spacer;
 		input {
-			@extend %button;
+			@include typo.button;
 			background-color: $color-black;
 			color: $color-white;
 			display: inline-block;
 			margin: 0px $spacer;
 			margin-left: 0!important;
-			@extend %small;
-			padding: $spacer/2 $spacer*1.5;
+			@include typo.small;
+			padding: math.div($spacer, 2) $spacer*1.5;
                         text-transform: uppercase;
-                        @extend %font-bold;
+                        @include typo.font-bold;
 			@include media-breakpoint-up(xl) { 
 				margin: 0px $spacer-xl;
-				padding: $spacer-xl/2 $spacer-xl*1.5;
+				padding: math.div($spacer-xl, 2) $spacer-xl*1.5;
 			}
 			@include media-breakpoint-down(sm) { 
 				margin: 0px $spacer-sm;
-				padding: $spacer-sm/2 $spacer-sm*1.5;
+				padding: math.div($spacer-sm, 2) $spacer-sm*1.5;
 			}
 			&:hover{
 				background-color: $color-hover;
@@ -191,7 +192,7 @@
 	}
 	input{
 		transform: scale(1.5);
-		margin-right: $spacer/2!important;
+		margin-right: math.div($spacer, 2)!important;
 	}
 }
 * .formfield__label__text {

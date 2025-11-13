@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 import liveReload from 'vite-plugin-live-reload';
 import { spawn } from 'child_process';
+import path from 'node:path';
 
 export default defineConfig(({ command }) => {
   const isProduction = command === 'build';
@@ -31,9 +32,17 @@ export default defineConfig(({ command }) => {
         output: {
           entryFileNames: 'js/[name].js', // Custom name for JS files
           assetFileNames: (assetInfo) => {
-            if (assetInfo.name.endsWith('.css')) {
-              return 'css/[name][extname]'; // Custom name for CSS files
+            const ext = path.extname(assetInfo.name || '');
+
+            if (ext === '.css') {
+              return 'css/[name][extname]';
             }
+
+            if (['.ttf', '.otf', '.woff', '.woff2'].includes(ext)) {
+              return 'fonts/[name][extname]';
+            }
+
+            return 'assets/[name]-[hash][extname]';
           },
         },
       },

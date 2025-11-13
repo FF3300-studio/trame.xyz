@@ -1,5 +1,5 @@
 @use "../shared" as *;
-@import "../base/typography";
+@use "../base/typography" as typo;
 
 /* COOKIE MODAL COMPONENT */
 .cookie-modal {

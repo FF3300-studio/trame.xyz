@@ -1,5 +1,6 @@
+@use "sass:math";
 @use "../shared" as *;
-@import "../base/typography";
+@use "../base/typography" as typo;
 
 /* ANTEPRIMA CARDS PER LE GRIDS */
 // =========================
@@ -35,7 +36,7 @@
     margin-top: 0;
   }
   .cards-text p {
-    margin-top: $spacer / 2;
+    margin-top: math.div($spacer, 2);
   }
   .cards-dates span,
   .cards-place span {
@@ -119,7 +120,7 @@ span.tag {
   font-size: 75%;
   min-width: 0;
   flex-grow: 0;
-  margin: $spacer-sm / 2 $spacer $spacer-sm / 2 0;
+  margin: math.div($spacer-sm, 2) $spacer math.div($spacer-sm, 2) 0;
   border-radius: 100vw;
   padding: 7.5px 10px 6px;
   background-color: gray;
@@ -146,7 +147,7 @@ span.tag {
 ul.siblings {
   background-color: $color-theme-bis;
   li {
-    @extend %small;
+    @include typo.small;
     * {
       color: $color-black;
     }
@@ -224,7 +225,7 @@ span#deadline.laptop {
   text-align: right;
   display: inline-block;
   border-radius: 100vw;
-  padding: $spacer / 3 $spacer;
+  padding: math.div($spacer, 3) $spacer;
   max-width: fit-content;
   min-width: 0;
   z-index: 99;

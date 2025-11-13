@@ -1,5 +1,6 @@
+@use "sass:math";
 @use "../shared" as *;
-@import "../base/typography";
+@use "../base/typography" as typo;
 
 /* HEADER */
 /* CSS relativo alla sezione header / menu */
@@ -43,13 +44,13 @@
       min-width: 100%;
       display: flex;
     }
-    .accordion__item {
-      margin: $spacer/3;
+.accordion__item {
+      margin: math.div($spacer, 3);
       width: fit-content;
       .title_link {
         width: fit-content;
         display: inline-block;
-        padding: $spacer/1.5 $spacer*1.25;
+        padding: math.div($spacer, 1.5) $spacer*1.25;
         font-size: $medium;
         color: $color-black;
         background-color: $color-theme;
@@ -190,8 +191,8 @@
         flex-direction: row;
         flex-wrap: nowrap;
         .title_link {
-          @extend %extrasmall;
-          @extend %button;
+          @include typo.extrasmall;
+          @include typo.button;
           display: inline-block;
           padding: 6px 8px;
           font-weight: 700;

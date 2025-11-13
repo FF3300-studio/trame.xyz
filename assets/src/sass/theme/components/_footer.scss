@@ -1,5 +1,6 @@
+@use "sass:math";
 @use "../shared" as *;
-@import "../base/typography";
+@use "../base/typography" as typo;
 
 /* FOOTER */
 /* CSS relativo al componente Footer */
@@ -38,7 +39,7 @@ footer {
     }
   }
   .credits {
-    margin-right: $spacer-sm / 2;
+    margin-right: math.div($spacer-sm, 2);
   }
   .spin-offs a:hover,
   .social a:hover {

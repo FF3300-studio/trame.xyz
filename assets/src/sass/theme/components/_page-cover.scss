@@ -1,5 +1,5 @@
 @use "../shared" as *;
-@import "../base/typography";
+@use "../base/typography" as typo;
 
 /* COMPONENTE: PAGE COVER */
 /* CSS relativo al componente che stampa le copertine delle pagine */

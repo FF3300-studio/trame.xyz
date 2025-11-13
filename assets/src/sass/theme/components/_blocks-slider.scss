@@ -1,5 +1,6 @@
+@use "sass:math";
 @use "../shared" as *;
-@import "../base/typography";
+@use "../base/typography" as typo;
 
 /* BLOCKS LAYOUT */
 /* CSS relativo al componente LAYOUT DI BLOCCHI */
@@ -34,7 +35,7 @@ hr {
     }
   }
   ul li {
-    @extend %small;
+    @include typo.small;
     line-height: 1.35;
   }
   figure,
@@ -50,9 +51,9 @@ hr {
       margin-bottom: $spacer-sm * 1;
       }
     img {
-      margin-bottom: $spacer / 3;
+      margin-bottom: math.div($spacer, 3);
       @include media-breakpoint-up(xl) {
-        margin-bottom: $spacer-xl / 3;
+        margin-bottom: math.div($spacer-xl, 3);
       }
       @include media-breakpoint-down(sm) {
         margin: 0 auto;
@@ -79,7 +80,7 @@ hr {
     padding: 0;
     margin: 0 $spacer * 3;
     background-color: $color-white;
-    @extend %medium;
+    @include typo.medium;
     @include media-breakpoint-up(xl) {
       margin: 0 $spacer-xl * 3;
     }
@@ -92,7 +93,7 @@ hr {
       padding: 0;
       width: 100%;
       color: $color-black;
-      margin-bottom: $spacer / 2;
+      margin-bottom: math.div($spacer, 2);
       &:not(:first-child) {
         border-top: 1px solid $color-primary;
       }
@@ -243,17 +244,17 @@ hr {
           }
           h2 {
             color: $color-white;
-            @extend %font-extrabold;
+            @include typo.font-extrabold;
             margin-left: 0;
             margin-right: 0;
-            @extend %massive;
+            @include typo.massive;
           }
           .bodycopy {
             p {
               color: $color-white;
               margin-left: 0;
               margin-right: 0;
-              @extend %extralarge;
+              @include typo.extralarge;
             }
           }
         }
@@ -305,10 +306,10 @@ hr {
       padding-bottom: $spacer-sm * 2;
     }
     h1 {
-      @extend %font-extrabold;
+      @include typo.font-extrabold;
       margin: 0;
       padding: 0;
-      @extend %ultralarge;
+      @include typo.ultralarge;
     }
   }
   .block-cards-list {
@@ -449,13 +450,13 @@ hr {
           }
           .cards-title p {
             color: $color-white;
-            @extend %font-extrabold;
-            @extend %small;
+            @include typo.font-extrabold;
+            @include typo.small;
           }
           .cards-text p {
             color: $color-white;
             margin-bottom: 0;
-            @extend %small;
+            @include typo.small;
             a {
               color: $color-theme;
               &:hover {
@@ -471,7 +472,7 @@ hr {
 .cards-text {
   p {
     color: $color-black;
-    @extend %small;
+    @include typo.small;
     margin-bottom: 0px;
     a {
       color: $color-theme !important;
@@ -524,8 +525,8 @@ hr {
       padding: $spacer-sm * 3;
     }
     .text-column-title p {
-      @extend %ultralarge;
-      @extend %font-extrabold;
+      @include typo.ultralarge;
+      @include typo.font-extrabold;
       margin-bottom: $spacer;
       @include media-breakpoint-up(xl) {
         margin-bottom: $spacer-xl;
@@ -536,7 +537,7 @@ hr {
     }
     .text-column-text {
       p {
-        @extend %extralarge;
+        @include typo.extralarge;
         margin-bottom: $spacer;
         @include media-breakpoint-up(xl) {
           margin-bottom: $spacer-xl;
@@ -546,7 +547,7 @@ hr {
         }
       }
       a {
-        @extend %extralarge;
+        @include typo.extralarge;
         text-decoration: underline;
       }
     }
@@ -575,7 +576,7 @@ hr {
   align-items: center;
   .tag {
     width: fit-content;
-    padding: $spacer/3 $spacer;
+    padding: math.div($spacer, 3) $spacer;
     border-radius: 100vw;
     background-color: $color-theme;
     color: $color-black;
@@ -614,10 +615,10 @@ hr {
       padding: $spacer-sm * 3;
     }
     h1 {
-      @extend %font-extrabold;
+      @include typo.font-extrabold;
       margin: 0;
       padding: 0;
-      @extend %ultralarge;
+      @include typo.ultralarge;
       @include media-breakpoint-down(sm) {
         padding: $spacer-sm * 2;
       }
@@ -635,7 +636,7 @@ hr {
   }
 }
 .label-grid {
-  padding: $spacer / 3 $spacer;
+  padding: math.div($spacer, 3) $spacer;
   background-color: $color-black;
   color: $color-white;
   text-transform: uppercase;
@@ -746,9 +747,9 @@ hr {
         .item-title {
           p {
             color: $color-white;
-            @extend %font-extrabold;
+            @include typo.font-extrabold;
             margin-bottom: 0;
-            @extend %large;
+            @include typo.large;
           }
         }
       }
@@ -789,8 +790,8 @@ hr {
       padding: 0;
       text-align: center;
       color: $color-white;
-      @extend %font-extrabold;
-      @extend %ultralarge;
+      @include typo.font-extrabold;
+      @include typo.ultralarge;
     }
   }
   .block-slider-cards-list {
@@ -829,8 +830,8 @@ hr {
         }
         .item-title p {
           color: $color-white;
-          @extend %font-extrabold;
-          @extend %large;
+          @include typo.font-extrabold;
+          @include typo.large;
         }
       }
     }

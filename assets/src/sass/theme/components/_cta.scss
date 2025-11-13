@@ -1,21 +1,22 @@
+@use "sass:math";
 @use "../shared" as *;
-@import "../base/typography";
+@use "../base/typography" as typo;
 
 /* BLOCK CTA */
 .block-cta {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: $spacer / 3 $spacer * 2;
+  padding: math.div($spacer, 3) $spacer * 2;
   margin-bottom: $spacer * 2;
   @include media-breakpoint-up(xl) {
-    padding: $spacer-xl / 3 $spacer-xl * 2;
+    padding: math.div($spacer-xl, 3) $spacer-xl * 2;
     margin-bottom: $spacer-xl * 2;
   }
   @include media-breakpoint-down(sm) {
     flex-direction: column;
     align-items: flex-start;
-    padding: $spacer-sm / 3 $spacer-sm * 2;
+    padding: math.div($spacer-sm, 3) $spacer-sm * 2;
     margin-bottom: $spacer-sm * 2;
   }
   a {
@@ -23,20 +24,20 @@
     flex-grow: 1;
     min-width: fit-content;
     white-space: nowrap;
-    @extend %button;
-    @extend %small;
-    @extend %font-bold;
+    @include typo.button;
+    @include typo.small;
+    @include typo.font-bold;
     border: 2px solid $color-black;
     
-    margin: $spacer/3 $spacer/6;
-    padding: $spacer / 1.5 $spacer * 1.5;
+    margin: math.div($spacer, 3) math.div($spacer, 6);
+    padding: math.div($spacer, 1.5) $spacer * 1.5;
     @include media-breakpoint-up(xl) {
-    margin: $spacer-xl/3 $spacer-xl/6;
-      padding: $spacer-xl / 1.5 $spacer-xl * 1.5;
+      margin: math.div($spacer-xl, 3) math.div($spacer-xl, 6);
+      padding: math.div($spacer-xl, 1.5) $spacer-xl * 1.5;
     }
     @include media-breakpoint-down(sm) {
-      margin: $spacer-sm / 2 $spacer-sm 0 0;
-      padding: $spacer-sm / 1.5 $spacer-sm * 1.5;
+      margin: math.div($spacer-sm, 2) $spacer-sm 0 0;
+      padding: math.div($spacer-sm, 1.5) $spacer-sm * 1.5;
     }
     &:hover {
       color: $color-white!important;
