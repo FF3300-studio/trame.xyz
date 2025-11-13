@@ -1,6 +1,11 @@
 @use "../settings" as *;
 @use "typography" as *;
 
+:root {
+  --bs-font-sans-serif: #{$font-family-base};
+  --bs-body-font-family: #{$font-family-base};
+}
+
 * .active {
   background-color: $color-hover !important;
   color: $color-white !important;
