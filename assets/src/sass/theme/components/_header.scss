@@ -191,7 +191,7 @@
         flex-wrap: nowrap;
         .title_link {
           @include typo.extrasmall;
-          @include typo.button;
+          //@include typo.button;
           display: inline-block;
           padding: 6px 8px;
           font-weight: 700;
