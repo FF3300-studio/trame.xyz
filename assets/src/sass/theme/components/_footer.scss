@@ -23,7 +23,7 @@ footer {
   margin: 0 auto;
   padding: $spacer-sm 0;
   //background-color: #000;
-  color: white;
+  color: black;
   &.first {
     justify-content: center;
   }
@@ -58,10 +58,17 @@ footer {
   h4,
   h5,
   p {
-    color: $color-white;
+    color: $color-black;
+    font-size: $extrasmall;
+    line-height: 1.1;
+    & strong {
+      font-weight: $black;
+    }
   }
   a {
-    color: $color-white;
+    color: $color-black;
+    font-size: $extrasmall;
+    line-height: 1.1;
     &:hover {
       color: $color-hover;
     }
