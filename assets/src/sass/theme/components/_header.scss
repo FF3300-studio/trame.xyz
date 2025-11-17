@@ -67,6 +67,7 @@
 .logotype {
   @include typo.font-extrabold;
   font-variation-settings: "wght" 1000;
+  margin: 0;
 }
 
 .navbar-toggler {
