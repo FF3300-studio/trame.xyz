@@ -252,7 +252,7 @@ span.bollino_manca_poco {
 span.bollino_chiuse {
   @include bollino-base;
   color: $color-white !important;
-  background-color: $color-purple;
+  background-color: $color-dark-blue;
 }
 // =========================
 // Keyframes Animazioni
