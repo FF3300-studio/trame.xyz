@@ -6,47 +6,62 @@
 /* CSS relativo al navigatore di pagina */
 .breadcrumbs {
   width: 100%;
-  padding: $spacer $spacer * 3;
+  padding: $spacer;
   background-color: $color-primary;
-  border-top: 2px solid $color-black;
-  border-bottom: 2px solid $color-black;
-  @include typo.micro;
+  font-family: Grid;
+  @include typo.extralarge;
+  font-variation-settings: "wght" 900, "BACK" 0, "SHAP" 100;
+
   @include media-breakpoint-up(xl) {
-    padding: $spacer-xl $spacer-xl * 3;
+    padding: $spacer-xl;
   }
+
   @include media-breakpoint-down(sm) {
-    padding: $spacer-sm $spacer-sm * 3;
+    padding: $spacer-sm;
   }
+
   ul {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
     margin: 0;
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+
     li {
       padding: 0;
       margin: 0;
-      font-size: 120%;
+      @include typo.extralarge;
+      font-variation-settings: "wght" 900, "BACK" 0, "SHAP" 100;
+
       .arrow {
         display: inline-block;
         position: relative;
         top: 0;
         margin: 0 math.div($spacer, 2);
+
         @include media-breakpoint-up(xl) {
           margin: 0 math.div($spacer-xl, 2);
         }
+
         @include media-breakpoint-down(sm) {
           margin: 0 math.div($spacer-sm, 2);
         }
       }
+
       a,
       .current {
-        @include typo.micro;
+        @include typo.extralarge;
+        font-variation-settings: "wght" 900, "BACK" 0, "SHAP" 100;
         color: $color-black;
-        text-transform: uppercase;
+        font-family: Grid;
         margin-bottom: 0;
       }
+
       .current {
-        @include typo.font-bold;
+        font-family: Grid;
+        font-variation-settings: "wght" 900, "BACK" 0, "SHAP" 100;
       }
     }
   }
