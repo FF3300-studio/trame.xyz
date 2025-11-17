@@ -63,6 +63,12 @@
     }
   }
 }
+
+.logotype {
+  @include typo.font-extrabold;
+  font-variation-settings: "wght" 1000;
+}
+
 .navbar-toggler {
   border: none;
   position: relative;
