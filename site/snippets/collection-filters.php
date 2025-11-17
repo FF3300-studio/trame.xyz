@@ -64,7 +64,6 @@ foreach ($categories as $category) {
     .single-filter:hover.{$nome} {
         background-color: {$colore}!important;
         transition: none;
-        outline: 2px solid black!important;
     }
     ";
 }
