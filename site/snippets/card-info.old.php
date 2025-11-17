@@ -1,10 +1,7 @@
 <div class="cards-details" style="<?php if($page->parent() !== NULL): ?>padding: 45px; max-width: 1080px; margin: 0 auto!important;<?php else: ?>padding: 15px;<?php endif; ?> margin: 0;" class="cards-info" <?php  if($direction == "row"): ?>style="margin-left: 15px"<?php endif; ?>>
 
     <div class="cards-title">
-        <?php snippet('freaky-title',[
-            'input' => $item->title(),
-            'big' => true,
-        ]); ?>
+        <h2><?= $item->title() ?></h2>
     </div>
     <?php if($item->locator()->isNotEmpty()) :?>
         <div class="cards-locator">
