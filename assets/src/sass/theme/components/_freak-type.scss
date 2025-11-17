@@ -2,7 +2,7 @@
 @use "../shared" as *;
 @use "../base/typography" as typo;
 
-/* FREAK GROTESK TYPOGRAPHY */
+/* Typography helpers (plain version, no stylistic sets) */
 .logotype_container {
   margin-top: math.div($spacer, 2);
 }
@@ -14,57 +14,13 @@
   display: flex;
   align-items: center;
 }
-* h1 span,
-* h2 span,
-* h3 span,
-* h4 span,
-* h5 span {
+
+h1.title,
+h2.title,
+h3.title,
+h4.title,
+h5.title {
   @include typo.font-extrabold;
-  min-width: unset !important;
-  min-height: fit-content!important;
-  &.zero_uno {
-    font-feature-settings: "ss01" 1;
-  }
-  &.zero_due {
-    font-feature-settings: "ss02" 1;
-  }
-  &.zero_tre {
-    font-feature-settings: "ss03" 1;
-  }
-  &.zero_quattro {
-    font-feature-settings: "ss04" 1;
-  }
-  &.zero_cinque {
-    font-feature-settings: "ss05" 1;
-  }
-  &.zero_sei {
-    font-feature-settings: "ss06" 1;
-  }
-  &.zero_sette {
-    font-feature-settings: "ss07" 1;
-  }
-}
-.freak {
-  @include typo.font-extrabold;
-  font-size: 2.66vw !important;
-  min-height: 2.33vw;
-  @include media-breakpoint-down(sm) {
-    font-size: 42px !important;
-    min-height: auto!important;
-  }
-  @include media-breakpoint-up(xl) {
-    font-size: 2.33vw !important;
-  }
-  &.big {
-    font-size: 6vw !important;
-    line-height: 90% !important;
-    @include media-breakpoint-down(sm) {
-      font-size: 10vw !important;
-    }
-    @include media-breakpoint-up(xl) {
-      font-size: 7vw !important;
-    }
-  }
 }
 
 /* hacks */
