@@ -121,7 +121,7 @@ span.tag {
   font-size: $extrasmall;
   min-width: 0;
   flex-grow: 0;
-  margin: math.div($spacer-sm, 2) $spacer math.div($spacer-sm, 2) 0;
+  margin: 0 $spacer math.div($spacer-sm, 2) 0;
 
   border-radius: 0;
   padding: 7.5px 10px 6px;
@@ -172,6 +172,7 @@ a.related span {
 .single-cards {
   padding: 0;
   margin: 0 $spacer;
+  font-size: $small;
   min-width: calc(25% - $spacer * 2);
   max-width: calc(25% - $spacer * 2);
   flex-grow: 0;
@@ -306,4 +307,10 @@ span.bollino_chiuse {
 
 .cards-categories .tag.parent {
   display: none !important;
+}
+
+.card-master .cards-details .cards-title h2 {
+  font-size: $large-sm;
+  font-weight: $font-bold;
+  margin-top: $spacer;
 }
