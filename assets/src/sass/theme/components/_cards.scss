@@ -41,8 +41,12 @@
   }
   .cards-dates span,
   .cards-place span {
-    font-size: 18px;
+    font-family: "Geist-mono";
+    font-weight: $font-extrabold;
+    font-size: $small;
     width: auto;
+    color: $color-theme;
+    margin-top: $spacer;
   }
   .card-image-container {
     position: relative;
@@ -104,13 +108,13 @@
   }
 }
 .time {
+  font-family: "Geist-mono";
   display: flex;
-  justify-content: right;
-  align-items: right;
-  min-width: 50%;
-  flex-grow: 2;
+  max-width: 50%;
+  min-width: fit-content;
+  flex-grow: 0;
   @include media-breakpoint-down(sm) {
-    font-size: $small;
+    font-size: $extrasmall;
   }
 }
 // =========================
