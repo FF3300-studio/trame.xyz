@@ -8,7 +8,11 @@
 <div class="cards-categories">
     <span class="tag parent"><?= $item->parent()->title() ?></span>
     <?php foreach($item->child_category_selector()->split() as $category): ?>
-        <span class="tag"><?= $category ?></span>
+        <?php $tutte_le_categorie = $item->parent()->parent_category_manager()->toStructure() ?>
+        <span class="tag" style="<?php snippet('color_cat_chips',[
+            'tutte_le_categorie' => $tutte_le_categorie,
+            'category' => $category, 
+        ]) ?>"><?= $category ?></span>
         <?php if(strtolower($category) == "workshop"): ?>
             <?php $facilitato = true ?>
         <?php endif; ?>

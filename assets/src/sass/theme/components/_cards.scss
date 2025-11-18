@@ -127,9 +127,9 @@ span.tag {
   padding: 7.5px 10px 6px;
 
   background-color: gray;
-  color: $color-white !important;
-  border: 1px solid gray !important;
-  font-weight: 700;
+  color: $color-black !important;
+  //border: 1px solid gray !important;
+  font-variation-settings: "wght" 1000;
   text-transform: uppercase;
 
   &.parent {
@@ -172,17 +172,14 @@ a.related span {
 .single-cards {
   padding: 0;
   margin: 0 $spacer;
-  min-width: calc(20% - $spacer * 2);
-  max-width: calc(50% - $spacer * 2);
+  min-width: calc(25% - $spacer * 2);
+  max-width: calc(25% - $spacer * 2);
   flex-grow: 0;
   margin-bottom: $spacer * 2;
-  @include media-breakpoint-up(xl) {
-    margin: 0 $spacer-xl;
-    margin-bottom: $spacer-xl * 2;
-    min-width: calc(20% - $spacer-sm * 2);
-    max-width: calc(25% - $spacer-sm * 2);
-  }
+
   @include media-breakpoint-down(md) {
+    min-width: calc(50% - $spacer * 2);
+    max-width: calc(50% - $spacer * 2);
     margin: 0 $spacer-sm;
     margin-bottom: $spacer-sm * 2;
   }
