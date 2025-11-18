@@ -12,7 +12,8 @@
   padding: 0;
   border: none;
   box-shadow: none;
-  background-color: whitesmoke;
+  background-color: $color-white;
+  border: 2px solid $color-filter-bar;
   filter: blur(100%); // ⚠️ valuta se necessario
   text-decoration: none;
   margin: 0;
