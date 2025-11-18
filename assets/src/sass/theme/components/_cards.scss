@@ -118,7 +118,7 @@
 // =========================
 span.tag {
   font-family: Grid;
-  font-size: 75%;
+  font-size: $extrasmall;
   min-width: 0;
   flex-grow: 0;
   margin: math.div($spacer-sm, 2) $spacer math.div($spacer-sm, 2) 0;
