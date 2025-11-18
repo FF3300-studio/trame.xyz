@@ -1,6 +1,6 @@
 <!-- GRIGLIA EVENTI FUTURI -->
 <?php if ($futureEvents->isNotEmpty()): ?>
-    <h5 class="label-grid new"><strong>FUTURE</strong></h5>
+    <h5 class="label-grid new">FUTURE</h5>
     <div class="block-grid-a-list" style="justify-content: space-evenly; display: flex;">
         <?php $card_counter = 0; ?>
         <?php foreach ($futureEvents as $child): ?>

@@ -31,7 +31,7 @@ hr {
 .blocks {
   .column {
     @include media-breakpoint-down(sm) {
-      padding: 0!important;
+      padding: 0 !important;
     }
   }
   ul li {
@@ -45,11 +45,11 @@ hr {
     @include media-breakpoint-up(xl) {
       margin: 0;
       margin-bottom: $spacer-xl * 1;
-      }
+    }
     @include media-breakpoint-down(sm) {
       margin: 0;
       margin-bottom: $spacer-sm * 1;
-      }
+    }
     img {
       margin-bottom: math.div($spacer, 3);
       @include media-breakpoint-up(xl) {
@@ -142,10 +142,10 @@ hr {
   .swiper {
     min-height: fit-content;
     margin: 0;
-    .swiper-navigation-icon{ 
+    .swiper-navigation-icon {
       width: auto;
-      max-height: $spacer*1.25;
-      color: $color-white!important;
+      max-height: $spacer * 1.25;
+      color: $color-white !important;
     }
     .swiper-button-prev,
     .swiper-button-next {
@@ -337,7 +337,7 @@ hr {
         @include media-breakpoint-down(sm) {
           width: 75vw;
           height: auto;
-          margin:0 auto!important;
+          margin: 0 auto !important;
         }
       }
       .swiper-button-prev,
@@ -411,7 +411,7 @@ hr {
         margin-bottom: $spacer-sm;
         height: auto;
       }
-      
+
       a {
         display: flex;
         flex-direction: column;
@@ -636,6 +636,9 @@ hr {
   }
 }
 .label-grid {
+  font-family: Grid;
+  font-size: $extrasmall;
+  font-variation-settings: "wght" 1000;
   padding: math.div($spacer, 3) $spacer;
   background-color: $color-black;
   color: $color-white;
@@ -644,13 +647,13 @@ hr {
   width: fit-content;
   margin: $spacer;
   margin-top: 0;
-  &.new{
-    background-color: $color-theme;
-    color: $color-black;  
+  &.new {
+    background-color: $color-filter-bar;
+    color: $color-black;
   }
-  &.old{
-    background-color: $color-theme-bis;
-    color: $color-white;  
+  &.old {
+    background-color: $color-filter-bar;
+    color: $color-black;
   }
   @include media-breakpoint-up(xl) {
     margin: $spacer-xl;
@@ -665,9 +668,9 @@ hr {
 /* BLOCK grid list */
 .block-grid-a-list {
   padding: 0;
-  margin: inherit 0!important;
+  margin: inherit 0 !important;
   flex-wrap: wrap;
-  justify-content: space-between; 
+  justify-content: space-between;
   display: flex;
   @include media-breakpoint-down(sm) {
     display: block;
