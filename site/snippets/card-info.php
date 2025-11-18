@@ -63,7 +63,6 @@
 <?php endif; ?>
 <?php if ($item->deadline()->isNotEmpty() && strtotime($item->deadline()) >= strtotime('today')): ?>
     <?php $deadline_toggle = "on" ?>
-    <hr style="margin: 0; margin-top: 30px; border: none; border-bottom: 1px solid gray;">
     <?php $deadline = $item->deadline() ?>
     <div class="cards-dates" style="display: flex; width: 100%; justify-content: center; flex-wrap:wrap; text-align: center;">
         <?php 
@@ -72,9 +71,7 @@
         ?>
         <span id="deadline" class="center" style="min-width: fit-content; max-width: 100%; text-transform: uppercase; text-align: center; padding-top: 15px; padding-bottom: 15px;" class="time"><strong>ISCRIVITI ENTRO</strong> → <strong><?= $formatter->format($deadline->toDate()) ?></strong></span>
     </div>
-    <hr style="margin: 0; margin-bottom: 15px; border: none; border-top: 1px solid gray;">
 <?php else: ?>
-    <hr style="margin: 0; border: none;">
 <?php endif; ?>
 
 <div class="cards-text">
@@ -101,19 +98,16 @@
 
 <?php if($item->appuntamenti()->isNotEmpty()): ?>
     <div>
-        <div class="team-label"><p style="margin: 0 auto; margin-top: 15px; margin-bottom: 0;"><strong>Appuntamenti:</strong></p></div>
-        <hr style="margin: 0; margin-top: 15px; border: none; border-bottom: 1px solid black;">
         <?php $appuntamenti = $item->appuntamenti()->toStructure() ?>
         <div class="cards-dates" style="display: flex; width: 100%; justify-content: space-between; flex-wrap:wrap;">
             <?php foreach($appuntamenti as $appuntamento): ?>
             <?php 
             $formatter = new IntlDateFormatter('it_IT', IntlDateFormatter::NONE, IntlDateFormatter::NONE);
-            $formatter->setPattern('d MMM Y'); // Modello simile a %d – %b – %Y;
+            $formatter->setPattern('d MMMM Y'); // Modello simile a %d – %b – %Y;
             ?>
-            <span style="border: none; border-bottom: 1px solid gray; text-transform: uppercase; padding-top: 15px; padding-bottom: 15px; text-align: center;" class="time"><strong><?= $formatter->format($appuntamento->giorno()->toDate()) ?></strong></span>  <span class="time" style="border: none; border-bottom: 1px solid gray; text-align: center; border-left: 1px solid gray; padding-top: 15px; padding-bottom: 15px;"><?= $appuntamento->orario_inizio()->toDate('H:i') ?> → <?= $appuntamento->orario_fine()->toDate('H:i') ?></span>
+            <span style=" text-transform: capitalize;" class="time"><strong><?= $formatter->format($appuntamento->giorno()->toDate()) ?></strong></span>  <span class="time" style=""><?= $appuntamento->orario_inizio()->toDate('H:i') ?> → <?= $appuntamento->orario_fine()->toDate('H:i') ?></span>
             <?php endforeach; ?>
         </div>
-        <hr style="margin: 0; margin-bottom: 0; border: none!important;">
     </div>
 <?php endif; ?>
 
@@ -132,14 +126,12 @@
 
         <?php if($page->parent() !== NULL AND $page->parent()->collection_options() == "calendar"): ?>
             <?php if(strtotime($page->deadline()) >= strtotime('today')): ?>
-            <hr style="margin: 0; margin-top: 15px; margin-bottom: 15px; border: none; border-bottom: 1px solid gray;">
             <?php snippet('form-request-counter',[
             'page' => $page,
             ])?>
             <?php endif; ?>
         <?php else: ?>
             <?php if(strtotime($item->deadline()) >= strtotime('today')): ?>
-            <hr style="margin: 0; margin-top: 15px; margin-bottom: 15px; border: none; border-bottom: 1px solid gray;">
             <?php snippet('form-request-counter',[
             'page' => $item,
             ])?>
