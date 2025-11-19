@@ -26,6 +26,7 @@
   }
   &:hover {
     text-decoration: none;
+    background-color: $color-filter-bar;
     * {
       color: $color-hover;
     }
