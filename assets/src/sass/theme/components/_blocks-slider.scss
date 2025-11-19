@@ -670,8 +670,7 @@ hr {
   padding: 0;
   margin: inherit 0 !important;
   flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: $spacer;
+  justify-content: space-between;
   display: flex;
   @include media-breakpoint-down(sm) {
     display: block;
