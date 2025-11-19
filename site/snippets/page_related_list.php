@@ -30,7 +30,7 @@ if ($correlati->count() > 0):
         </h6>
       <?php endif; ?>
 
-      <div class="block-grid-a-list" style="justify-content: space-evenly; display: flex; flex-wrap: wrap;">
+      <div class="block-grid-a-list" style="">
         <?php foreach ($groups[$genitore->id()] as $child): ?>
           <?php snippet('card-grid', [
             'item' => $child,

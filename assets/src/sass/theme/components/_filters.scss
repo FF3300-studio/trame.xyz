@@ -108,5 +108,9 @@
     overflow-x: auto; // su mobile si può scrollare orizzontalmente
     white-space: nowrap;
     justify-content: flex-start;
+
+    .single-filter {
+      margin: $spacer;
+    }
   }
 }

@@ -1,7 +1,7 @@
 <!-- GRIGLIA EVENTI FUTURI -->
 <?php if ($futureEvents->isNotEmpty()): ?>
     <h5 class="label-grid new">FUTURE</h5>
-    <div class="block-grid-a-list" style="justify-content: space-between; display: flex;">
+    <div class="block-grid-a-list" style="">
         <?php $card_counter = 0; ?>
         <?php foreach ($futureEvents as $child): ?>
             <?php $card_counter++; ?>
@@ -31,7 +31,7 @@
         <hr style="margin-bottom: 15px">
     <?php endif; ?>
     <h5 class="label-grid old"><strong>PASSATE</strong></h5>
-    <div class="block-grid-a-list" style="justify-content: space-evenly; display: flex;">
+    <div class="block-grid-a-list" style="">
         <?php foreach ($pastEvents->sortBy('appuntamenti.giorno', 'desc') as $child): ?>
             <?php snippet('card-grid', [
                 'item' => $child,

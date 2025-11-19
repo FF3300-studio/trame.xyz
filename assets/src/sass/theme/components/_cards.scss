@@ -180,21 +180,18 @@ a.related span {
   min-width: calc(25% - $spacer * 2);
   max-width: calc(25% - $spacer * 2);
   flex-grow: 0;
-  margin-bottom: $spacer * 2;
 
   @include media-breakpoint-down(md) {
     min-width: calc(50% - $spacer * 2);
     max-width: calc(50% - $spacer * 2);
-    margin: 0 $spacer-sm;
-    margin-bottom: $spacer-sm * 2;
+    margin: $spacer-sm;
   }
 
   @include media-breakpoint-down(sm) {
     min-width: calc(100% - $spacer-sm * 2);
     max-width: calc(100% - $spacer-sm * 2);
     flex-grow: 1;
-    margin: 0 $spacer-sm;
-    margin-bottom: $spacer-sm * 2;
+    margin: $spacer-sm;
   }
 }
 .cards-details {
