@@ -57,12 +57,26 @@
         color: $color-black;
         font-family: Grid;
         margin-bottom: 0;
+        transition: color 0.2s ease;
       }
 
       .current {
         font-family: Grid;
         font-variation-settings: "wght" 900, "BACK" 0, "SHAP" 100;
       }
+
+      /* -------------------------------------------------- */
+      /* HOVER AGGIUNTO — cambia solo il colore delle voci */
+      /* -------------------------------------------------- */
+      a:hover {
+        color: $color-hover;
+      }
+
+      .current:hover {
+        color: $color-hover;
+        cursor: pointer;
+      }
+      /* -------------------------------------------------- */
     }
   }
 }
