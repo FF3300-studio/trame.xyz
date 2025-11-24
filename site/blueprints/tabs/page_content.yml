@@ -42,6 +42,7 @@ fields:
           - custom-text
           - cycling-text
           - card-from-page
+          - grid-overlay
       media:
         label: Media
         type: group
