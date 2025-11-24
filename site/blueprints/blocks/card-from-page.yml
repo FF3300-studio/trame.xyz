@@ -1,0 +1,8 @@
+name: Card-from-page
+icon: preview
+preview: fields
+fields:
+  source:
+    label: Pagina di origine della card
+    type: pages
+    max: 1

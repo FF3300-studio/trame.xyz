@@ -41,6 +41,7 @@ fields:
           - line
           - custom-text
           - cycling-text
+          - card-from-page
       media:
         label: Media
         type: group
