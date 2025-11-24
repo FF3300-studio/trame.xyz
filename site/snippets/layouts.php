@@ -53,6 +53,7 @@ $formData = $formData($page);
                 $scadenza = $layout->scadenza();
                 $raw_customID = $layout->custom_id()->value();
                 $custom_ID = Str::slug($raw_customID); 
+                $stickyClass = $layout->sticky_row()->isTrue() ? ' row-sticky' : '';
                 ?>
 
                 <?php if($scadenza == "true" ): ?>
@@ -69,7 +70,7 @@ $formData = $formData($page);
                                         <p><?= $anchorName; ?></p>
                                     </div>
                                 </div>
-                                <div <?php if($CustomIDEnabled):?>id="<?= $custom_ID ?>"<?php endif; ?> class="row anchor-row" style="<?php if(isset($custom_style)): ?><?= $custom_style ?><?php endif; ?><?php if($layout->custom_css()->isNotEmpty()):?><?= $layout->custom_css() ?><?php endif; ?>">
+                                <div <?php if($CustomIDEnabled):?>id="<?= $custom_ID ?>"<?php endif; ?> class="row anchor-row<?= $stickyClass ?>" style="<?php if(isset($custom_style)): ?><?= $custom_style ?><?php endif; ?><?php if($layout->custom_css()->isNotEmpty()):?><?= $layout->custom_css() ?><?php endif; ?>">
                                     <?php foreach ($layout->columns() as $column): ?>
                                         <div class="column col-lg-<?= $column->span() ?> <?php if($column->blocks()->isEmpty()): ?>mobile_display_none<?php endif; ?>">
                                             <div <?php if($layout->sticky() == "true"): ?>id="sticky_<?= $id_string ?>"<?php endif; ?> class="blocks">
@@ -79,7 +80,7 @@ $formData = $formData($page);
                                     <?php endforeach ?>
                                 </div>
                             <?php else: ?>
-                                <div <?php if($CustomIDEnabled):?>id="<?= $custom_ID ?>"<?php endif; ?> class="row" style="<?php if(isset($custom_style)): ?><?= $custom_style ?><?php endif; ?><?php if($layout->custom_css()->isNotEmpty()):?><?= $layout->custom_css() ?><?php endif; ?>">
+                                <div <?php if($CustomIDEnabled):?>id="<?= $custom_ID ?>"<?php endif; ?> class="row<?= $stickyClass ?>" style="<?php if(isset($custom_style)): ?><?= $custom_style ?><?php endif; ?><?php if($layout->custom_css()->isNotEmpty()):?><?= $layout->custom_css() ?><?php endif; ?>">
                                     <?php foreach ($layout->columns() as $column): ?>
                                         <div class="column col-lg-<?= $column->span() ?> <?php if($column->blocks()->isEmpty()): ?>mobile_display_none<?php endif; ?>">
                                             <div <?php if($layout->sticky() == "true"): ?>id="sticky_<?= $id_string ?>"<?php endif; ?> class="blocks">
@@ -98,7 +99,7 @@ $formData = $formData($page);
                                 <p><?= $anchorName; ?></p>
                             </div>
                         </div>
-                        <div <?php if($CustomIDEnabled):?>id="<?= $custom_ID ?>"<?php endif; ?> class="row anchor-row" style="<?php if(isset($custom_style)): ?><?= $custom_style ?><?php endif; ?><?php if($layout->custom_css()->isNotEmpty()):?><?= $layout->custom_css() ?><?php endif; ?>">
+                        <div <?php if($CustomIDEnabled):?>id="<?= $custom_ID ?>"<?php endif; ?> class="row anchor-row<?= $stickyClass ?>" style="<?php if(isset($custom_style)): ?><?= $custom_style ?><?php endif; ?><?php if($layout->custom_css()->isNotEmpty()):?><?= $layout->custom_css() ?><?php endif; ?>">
                             <?php foreach ($layout->columns() as $column): ?>
                                 <div class="column col-lg-<?= $column->span() ?> <?php if($column->blocks()->isEmpty()): ?>mobile_display_none<?php endif; ?>">
                                     <div <?php if($layout->sticky() == "true"): ?>id="sticky_<?= $id_string ?>"<?php endif; ?> class="blocks">
@@ -108,7 +109,7 @@ $formData = $formData($page);
                             <?php endforeach ?>
                         </div>
                     <?php else: ?>
-                        <div <?php if($CustomIDEnabled):?>id="<?= $custom_ID ?>"<?php endif; ?> class="row" style="<?php if(isset($custom_style)): ?><?= $custom_style ?><?php endif; ?><?php if($layout->custom_css()->isNotEmpty()):?><?= $layout->custom_css() ?><?php endif; ?>">
+                        <div <?php if($CustomIDEnabled):?>id="<?= $custom_ID ?>"<?php endif; ?> class="row<?= $stickyClass ?>" style="<?php if(isset($custom_style)): ?><?= $custom_style ?><?php endif; ?><?php if($layout->custom_css()->isNotEmpty()):?><?= $layout->custom_css() ?><?php endif; ?>">
                             <?php foreach ($layout->columns() as $column): ?>
                                 <div class="column col-lg-<?= $column->span() ?> <?php if($column->blocks()->isEmpty()): ?>mobile_display_none<?php endif; ?>">
                                     <div <?php if($layout->sticky() == "true"): ?>id="sticky_<?= $id_string ?>"<?php endif; ?> class="blocks">

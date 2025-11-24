@@ -39,6 +39,8 @@ fields:
           - markdown
           - list
           - line
+          - custom-text
+          - cycling-text
       media:
         label: Media
         type: group

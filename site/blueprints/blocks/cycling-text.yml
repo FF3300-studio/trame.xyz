@@ -1,0 +1,41 @@
+name: Cycling Text
+icon: refresh
+preview: fields
+fields:
+  prefix:
+    label: Prefisso
+    type: text
+    default: Trame è un
+  words:
+    label: Parole da ciclare
+    type: structure
+    fields:
+      word:
+        label: Parola
+        type: text
+  suffix:
+    label: Suffisso
+    type: textarea
+    default: di innovazione che utilizza la pratica della tessitura come strumento per stimolare il libero sviluppo della creatività individuale e collettiva.
+  weight:
+    label: Peso Font (Parole ciclate)
+    type: range
+    min: 100
+    max: 1000
+    step: 100
+    default: 400
+    tooltip: "{{ value }}"
+  align:
+    label: Allineamento
+    type: toggles
+    default: left
+    options:
+      - value: left
+        text: Sinistra
+        icon: text-left
+      - value: center
+        text: Centro
+        icon: text-center
+      - value: right
+        text: Destra
+        icon: text-right

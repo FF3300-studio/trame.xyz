@@ -1,0 +1,25 @@
+.block-custom-text {
+  text-align: var(--align);
+  font-family: "GTLTrameTextureVF";
+  font-variation-settings: "wght" var(--weight);
+  font-size: 128px;
+  line-height: 1;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+  justify-content: var(--vertical-align);
+
+  .custom-text-line {
+    color: var(--color);
+    display: block;
+    text-decoration: none;
+    
+    &:hover {
+      opacity: 0.8; // Simple hover effect for links
+    }
+  }
+}

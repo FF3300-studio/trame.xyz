@@ -1,0 +1,72 @@
+name: Custom Text
+icon: text
+preview: fields
+fields:
+  lines:
+    label: Righe di Testo
+    type: structure
+    fields:
+      text:
+        label: Testo
+        type: text
+      color:
+        label: Colore
+        type: select
+        default: "#000000"
+        options:
+          - value: "#000000"
+            text: Nero
+          - value: "#ffffff"
+            text: Bianco
+          - value: "#4989c8"
+            text: Blu Tema
+          - value: "#6ebf9b"
+            text: Verde Tema
+          - value: "#ffe14e"
+            text: Giallo
+          - value: "#db4d39"
+            text: Rosso
+          - value: "#30407f"
+            text: Blu Scuro
+      link:
+        label: Link (Opzionale)
+        type: link
+  align:
+    label: Allineamento
+    type: toggles
+    default: left
+    options:
+      - value: left
+        text: Sinistra
+        icon: text-left
+      - value: center
+        text: Centro
+        icon: text-center
+      - value: right
+        text: Destra
+        icon: text-right
+      - value: justify
+        text: Giustificato
+        icon: text-justify
+  vertical_align:
+    label: Allineamento Verticale
+    type: toggles
+    default: top
+    options:
+      - value: top
+        text: Alto
+        icon: arrow-up
+      - value: center
+        text: Centro
+        icon: arrow-down # Using arrow-down as a placeholder, ideally arrow-vertical
+      - value: bottom
+        text: Basso
+        icon: arrow-down
+  weight:
+    label: Peso Font
+    type: range
+    min: 0
+    max: 200
+    step: 1
+    default: 100
+    tooltip: "{{ value }}"

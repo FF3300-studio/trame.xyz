@@ -4,6 +4,8 @@
   margin: 0 auto;
   padding: 0;
   margin-bottom: $spacer * 2;
+  display: flex;
+  flex-wrap: wrap;
 
   @include media-breakpoint-down(sm) {
     margin-bottom: $spacer-sm;
@@ -11,12 +13,21 @@
     padding-right: $spacer-sm;
   }
 
-  [class^="col-"] {
+  .column {
     padding: 0;
+    display: flex;
+    flex-direction: column;
 
     @include media-breakpoint-down(sm) {
       max-width: 100%;
       margin: inherit 0;
+    }
+
+    .blocks {
+      height: 100%;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
   }
 }

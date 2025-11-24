@@ -22,7 +22,8 @@ footer {
   align-items: flex-end;
   width: 100%;
   margin: 0 auto;
-  padding: $spacer-sm 0;
+  padding-top: $spacer;
+  padding-bottom: 0;
   //background-color: #000;
   color: black;
   &.first {
@@ -53,6 +54,9 @@ footer {
 }
 // Layout footer specifico (attenzione: il selettore era fragile)
 .footer .row {
+  margin-left: $spacer;
+  margin-right: $spacer;
+  margin-bottom: $spacer;
   //background-color: $color-black;
   h1,
   h2,

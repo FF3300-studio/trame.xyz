@@ -1,0 +1,9 @@
+.row-sticky {
+    position: sticky;
+    top: var(--header-height, 0px);
+    z-index: 1;
+    background-color: var(--bs-body-bg);
+    min-height: 100vh;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}

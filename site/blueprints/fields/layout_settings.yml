@@ -7,11 +7,13 @@ fields:
     type: toggle
     default: false
     width: 1/2
-  sticky_offset:
-    label: Valore dell'offset dello sticky
-    type: number
+    default: false
     width: 1/2
-    default: 100
+  sticky_row:
+    label: Row Sticky Parallax
+    type: toggle
+    default: false
+    width: 1/2
   custom_id:
     label: Questo layout ha un ID?
     type: text
