@@ -1,9 +1,1 @@
 @use "../shared" as *;
-
-.cycling-text-container {
-  h3 {
-    @include media-breakpoint-down(sm) {
-      font-size: $large-sm;
-    }
-  }
-}
