@@ -4,19 +4,13 @@ $text = nl2br($block->text()->or('Grid Overlay'));
 $fontSize = $block->font_size()->or(4);
 $link = $block->link()->toUrl();
 
-// Bottom Layer
+// Bottom Layer - Fixed parameters: 900 400 100
 $colorBottom = $block->color_bottom()->or('#000000');
-$wghtBottom = $block->wght_bottom()->or(100);
-$backBottom = $block->back_bottom()->or(0);
-$shapBottom = $block->shap_bottom()->or(100);
-$settingsBottom = "'wght' $wghtBottom, 'BACK' $backBottom, 'SHAP' $shapBottom";
+$settingsBottom = "'wght' 900, 'BACK' 400, 'SHAP' 100";
 
-// Top Layer
+// Top Layer - Fixed parameters: 900 100 100
 $colorTop = $block->color_top()->or('#000000');
-$wghtTop = $block->wght_top()->or(900);
-$backTop = $block->back_top()->or(0);
-$shapTop = $block->shap_top()->or(100);
-$settingsTop = "'wght' $wghtTop, 'BACK' $backTop, 'SHAP' $shapTop";
+$settingsTop = "'wght' 900, 'BACK' 100, 'SHAP' 100";
 
 $tag = $link ? 'a' : 'div';
 $href = $link ? 'href="' . $link . '"' : '';

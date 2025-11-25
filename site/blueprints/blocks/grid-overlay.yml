@@ -23,6 +23,7 @@ fields:
   header_bottom:
     label: Livello Sotto (Background)
     type: headline
+    help: "Parametri fissi: wght=900, BACK=400, SHAP=100"
   color_bottom:
     label: Colore Sotto
     type: select
@@ -42,35 +43,12 @@ fields:
         text: Rosso
       - value: "#30407f"
         text: Blu Scuro
-  wght_bottom:
-    label: Peso (wght)
-    type: range
-    min: 0
-    max: 900
-    step: 1
-    default: 100
-    tooltip: "{{ value }}"
-  back_bottom:
-    label: Back Slant (BACK)
-    type: range
-    min: 0
-    max: 900
-    step: 1
-    default: 0
-    tooltip: "{{ value }}"
-  shap_bottom:
-    label: Shape (SHAP)
-    type: range
-    min: 100
-    max: 400
-    step: 1
-    default: 100
-    tooltip: "{{ value }}"
 
   # Top Layer Settings
   header_top:
     label: Livello Sopra (Foreground)
     type: headline
+    help: "Parametri fissi: wght=900, BACK=100, SHAP=100"
   color_top:
     label: Colore Sopra
     type: select
@@ -90,27 +68,3 @@ fields:
         text: Rosso
       - value: "#30407f"
         text: Blu Scuro
-  wght_top:
-    label: Peso (wght)
-    type: range
-    min: 0
-    max: 900
-    step: 1
-    default: 900
-    tooltip: "{{ value }}"
-  back_top:
-    label: Back Slant (BACK)
-    type: range
-    min: 0
-    max: 900
-    step: 1
-    default: 0
-    tooltip: "{{ value }}"
-  shap_top:
-    label: Shape (SHAP)
-    type: range
-    min: 100
-    max: 400
-    step: 1
-    default: 100
-    tooltip: "{{ value }}"
