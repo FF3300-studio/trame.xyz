@@ -11,7 +11,7 @@ $align = $block->align()->or('left');
 $weight = $block->weight()->or(400);
 ?>
 
-<div class="cycling-text-container" style="padding: 2rem; text-align: <?= $align ?>;">
+<div class="cycling-text-container" style="padding: 0px; text-align: <?= $align ?>;">
     <h3>
         <?= $block->prefix() ?>
         <span id="<?= $id ?>" style="font-weight: <?= $weight ?>;"><?= $words->first() ? $words->first()->word() : '' ?></span>
