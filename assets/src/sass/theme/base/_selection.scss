@@ -1,0 +1,27 @@
+@use "../settings" as *;
+
+/* CUSTOM TEXT SELECTION */
+/* Nasconde la selezione di default del browser */
+::selection {
+  background: transparent;
+  color: inherit;
+}
+
+::-moz-selection {
+  background: transparent;
+  color: inherit;
+}
+
+/* Stile per il layer di selezione personalizzato */
+.selection-layer {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  font-family: "GTLTrameTextureVF", sans-serif;
+  font-weight: 200;
+  color: $color-yellow;
+  white-space: pre;
+  line-height: 1;
+  overflow: hidden;
+  mix-blend-mode: multiply;
+}
