@@ -54,8 +54,8 @@ footer {
 }
 // Layout footer specifico (attenzione: il selettore era fragile)
 .footer .row {
-  margin-left: $spacer;
-  margin-right: $spacer;
+  // margin-left: $spacer; // Removed to avoid double spacing
+  // margin-right: $spacer; // Removed to avoid double spacing
   margin-bottom: $spacer;
   //background-color: $color-black;
   h1,
@@ -92,7 +92,7 @@ footer {
 }
 .footer {
   @include media-breakpoint-down(sm) {
-    padding: 0;
+    // padding: 0; // Removed to keep container padding
   }
 }
 // Mobile override per layout

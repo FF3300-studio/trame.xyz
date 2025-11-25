@@ -229,80 +229,44 @@ span#deadline.laptop {
 // =========================
 // Bollini dinamici
 // =========================
-@mixin bollino-base {
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.deadline-badge {
   position: absolute;
   top: $spacer;
-  right: $spacer;
-  font-size: 12px;
-  font-weight: 700;
-  text-align: right;
-  display: inline-block;
-  border-radius: 100vw;
-  padding: math.div($spacer, 3) $spacer;
-  max-width: fit-content;
-  min-width: 0;
+  left: $spacer;
   z-index: 99;
-}
-span.bollino_update {
-  @include bollino-base;
-  color: $color-black !important;
-  background-color: $color-yellow !important;
-  animation: updated 1s infinite alternate;
-  transform: rotate(5deg);
-}
-span.bollino_iscriviti {
-  @include bollino-base;
-  color: $color-black !important;
-  background-color: $color-theme;
-  animation: iscriviti 1s infinite alternate;
-}
-span.bollino_manca_poco {
-  @include bollino-base;
-  color: $color-black !important;
-  background-color: $color-yellow;
-  animation: manca_poco 1s infinite alternate;
-}
-span.bollino_chiuse {
-  @include bollino-base;
-  color: $color-white !important;
+  
+  font-family: "Grid";
+  font-variation-settings: "wght" 1000;
+  font-size: $medium; 
+  line-height: 0.9;
+  text-align: left;
+  text-transform: uppercase;
+  
+  color: $color-yellow;
   background-color: $color-dark-blue;
-}
-// =========================
-// Keyframes Animazioni
-// =========================
-@keyframes manca_poco {
-  0% {
-    outline: 2px solid $color-white;
-    border: 2px solid $color-yellow;
-    transform: scale(0.95) rotate(-15deg);
+  padding: 5px 10px;
+  border-radius: 0;
+  
+  // animation: blink 1s infinite; // Removed blinking
+  
+  // Modifiers
+  &.manca-poco {
+    // color: $color-yellow; // Already default
   }
-  100% {
-    border: 2px solid $color-white;
-    outline: 2px solid $color-yellow;
-    transform: scale(1.05) rotate(15deg);
+  &.iscriviti {
+    // Let's set default to yellow and remove specific overrides unless necessary.
+    color: $color-yellow;
   }
-}
-@keyframes iscriviti {
-  0% {
-    outline: 2px solid $color-white;
-    border: 2px solid $color-theme;
-    transform: scale(0.95);
-  }
-  100% {
-    border: 2px solid $color-white;
-    outline: 2px solid $color-theme;
-    transform: scale(1.05);
-  }
-}
-@keyframes updated {
-  0% {
-    outline: 2px solid $color-white;
-    border: 2px solid $color-yellow;
-  }
-  100% {
-    border: 2px solid $color-white;
-    outline: 2px solid $color-yellow;
-    transform: rotate(-5deg);
+  &.chiuse {
+    color: $color-white; // Closed usually white on dark
+    background-color: $color-black; // Keep black bg for closed?
+    animation: none; 
   }
 }
 // =========================

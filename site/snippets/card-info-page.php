@@ -3,6 +3,38 @@
 <?php $deadline = $item->deadline() OR NULL ?>
 <?php $facilitato = false ?>
 <div class="cards-details" style="<?php if($page->parent() !== NULL): ?>padding: 30px; max-width: 1280px; min-width: fit-content; margin: 0 auto!important;<?php else: ?>padding: 15px;<?php endif; ?> margin: 0;" class="cards-info" <?php  if($direction == "row"): ?>style="margin-left: 15px"<?php endif; ?>>
+<?php
+// Data di oggi
+$today = date('Y-m-d', strtotime('today'));
+
+// Deadline in formato corretto (Y-m-d)
+$deadline = $item->deadline()->isNotEmpty() ? $item->deadline()->toDate('Y-m-d') : null;
+
+// deadline è definita e successiva o uguale a oggi?
+$deadline_bool = $deadline && ($deadline >= $today);
+
+// Data tra tre giorni
+$next_three_days = date('Y-m-d', strtotime('+3 days'));
+
+// deadline è entro i prossimi 3 giorni e non nel passato?
+$incoming_deadline_bool = $deadline && ($deadline >= $today && $deadline <= $next_three_days);
+
+$current = $item ?? $page;
+$formData = $formData($current);
+$hasAvailableSeats = !isset($formData['available']) || $formData['available'] > 0;
+
+// Controlla appuntamenti imminenti solo se non c'è deadline
+$incoming_appointment_bool = false;
+if (!$deadline && $current->appuntamenti()->isNotEmpty()) {
+    foreach ($current->appuntamenti()->toStructure() as $appuntamento) {
+        $giorno_appuntamento = $appuntamento->giorno()->toDate('Y-m-d');
+        if ($giorno_appuntamento >= $today && $giorno_appuntamento <= $next_three_days) {
+            $incoming_appointment_bool = true;
+            break;
+        }
+    }
+}
+?>
 
 <?php if($tag_toggle == true AND $item->child_category_selector()->isNotEmpty()): ?>
 <div class="cards-categories">
@@ -106,43 +138,8 @@
 
         <?php
 
-// Data di oggi
-$today = date('Y-m-d', strtotime('today'));
 
-// Deadline in formato corretto (Y-m-d)
-$deadline = $item->deadline()->isNotEmpty() ? $item->deadline()->toDate('Y-m-d') : null;
-
-// deadline è definita e successiva o uguale a oggi?
-$deadline_bool = $deadline && ($deadline >= $today);
-
-// Data tra tre giorni
-$next_three_days = date('Y-m-d', strtotime('+3 days'));
-
-// deadline è entro i prossimi 3 giorni e non nel passato?
-$incoming_deadline_bool = $deadline && ($deadline >= $today && $deadline <= $next_three_days);
-
-$current = $item ?? $page;
-$formData = $formData($current);
-$hasAvailableSeats = !isset($formData['available']) || $formData['available'] > 0;
-
-// Controlla appuntamenti imminenti solo se non c'è deadline
-$incoming_appointment_bool = false;
-if (!$deadline && $current->appuntamenti()->isNotEmpty()) {
-    foreach ($current->appuntamenti()->toStructure() as $appuntamento) {
-        $giorno_appuntamento = $appuntamento->giorno()->toDate('Y-m-d');
-        if ($giorno_appuntamento >= $today && $giorno_appuntamento <= $next_three_days) {
-            $incoming_appointment_bool = true;
-            break;
-        }
-    }
-}
 
 ?>
-<?php if (($incoming_deadline_bool || $incoming_appointment_bool) && $hasAvailableSeats): ?>
-    <span class="bollino_manca_poco" style="z-index: 4; padding: 24px 17px; border-radius: 100vw; text-align: center">MANCA<br>POCO!</span>
-<?php elseif ($deadline_toggle == "on" && $deadline_bool && $hasAvailableSeats): ?>
-    <span class="bollino_iscriviti" style="z-index: 3; padding: 24px 8px; border-radius: 100vw; text-align: center">ISCRIZIONI<br>APERTE</span>
-<?php elseif ($deadline_exist == "on"): ?>
-    <span class="bollino_chiuse" style="z-index: 3; padding: 24px 8px; border-radius: 100vw; text-align: center">ISCRIZIONI<br>CHIUSE</span>
-<?php endif; ?>
+
 </div>
