@@ -19,6 +19,20 @@
   z-index: 9999;
   font-family: "GTLTrameTextureVF", sans-serif;
   font-weight: 200;
+  color: $color-theme-bis;
+  white-space: pre;
+  line-height: 1;
+  overflow: hidden;
+  mix-blend-mode: multiply;
+}
+
+/* Stile per il layer di sottolineatura personalizzato */
+.underline-layer {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  font-family: "GTLTrameTextureVF", sans-serif;
+  font-weight: 200;
   color: $color-yellow;
   white-space: pre;
   line-height: 1;
