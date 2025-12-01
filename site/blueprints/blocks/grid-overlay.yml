@@ -48,7 +48,7 @@ fields:
   header_top:
     label: Livello Sopra (Foreground)
     type: headline
-    help: "Parametri fissi: wght=900, BACK=100, SHAP=100"
+    help: "Parametri fissi: wght=900, BACK=0, SHAP=100"
   color_top:
     label: Colore Sopra
     type: select

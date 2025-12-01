@@ -8,9 +8,9 @@ $link = $block->link()->toUrl();
 $colorBottom = $block->color_bottom()->or('#000000');
 $settingsBottom = "'wght' 900, 'BACK' 400, 'SHAP' 100";
 
-// Top Layer - Fixed parameters: 900 100 100
+// Top Layer - Fixed parameters: 900 0 100
 $colorTop = $block->color_top()->or('#000000');
-$settingsTop = "'wght' 900, 'BACK' 100, 'SHAP' 100";
+$settingsTop = "'wght' 900, 'BACK' 0, 'SHAP' 100";
 
 $tag = $link ? 'a' : 'div';
 $href = $link ? 'href="' . $link . '"' : '';
