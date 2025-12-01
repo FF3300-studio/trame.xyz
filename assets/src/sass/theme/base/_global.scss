@@ -77,11 +77,18 @@ body {
   overflow: visible !important;
   overflow-x: hidden !important;
   background-color: $color-primary;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 
   &.no-scroll {
     overflow: hidden !important;
     position: relative;
   }
+}
+
+.blocks-container.footer {
+  margin-top: auto;
 }
 
 html.lenis {

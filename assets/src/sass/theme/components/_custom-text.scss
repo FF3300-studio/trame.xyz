@@ -26,8 +26,15 @@
     display: block;
     text-decoration: none;
     
+    transition: color 0.3s ease;
+
+    &[href] {
+      cursor: pointer;
+    }
+    
     &:hover {
-      opacity: 0.8; // Simple hover effect for links
+      color: $color-black !important;
+      opacity: 1;
     }
   }
 }
