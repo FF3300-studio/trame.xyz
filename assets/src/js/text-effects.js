@@ -172,11 +172,6 @@
   });
 
   // Scroll & Resize
-  // Selection needs update on scroll (because it's fixed position but rects change relative to viewport? 
-  // Wait, if it's fixed, it stays on screen. If page scrolls, selection moves with text.
-  // So selection layers (fixed) need to move. 
-  // Actually, previous implementation updated on scroll.
-  
   window.addEventListener('scroll', () => {
     if (selectionLayers.length > 0) updateSelection();
     // Underlines are absolute, so they scroll with page naturally. No update needed for scroll!
