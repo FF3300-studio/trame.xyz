@@ -9,10 +9,12 @@
         ]) ?>
     <!-- se la COLLECTION ha una vista BLOG -->
     <?php elseif($page->collection_options() == 'blog'): ?>
-        <?php snippet('collection-blog-view',[
-            'collection_parent' => $page,
-            'collection' => $page->children()->listed()
-        ]) ?>
+        <?php if($page->slug() != 'attrezzatura'): ?>
+            <?php snippet('collection-blog-view',[
+                'collection_parent' => $page,
+                'collection' => $page->children()->listed()
+            ]) ?>
+        <?php endif; ?>
     <?php elseif($page->collection_options() == 'calendar'): ?>
         <?php snippet('collection-calendar-view',[
             'collection_parent' => $page,
