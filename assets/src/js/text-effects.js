@@ -60,6 +60,8 @@
     layer.style.width = rect.width + 'px';
     layer.style.height = rect.height + 'px';
     layer.style.fontSize = fontSize + 'px';
+    layer.style.pointerEvents = 'none'; // Ensure layer doesn't block clicks/scrolls
+    layer.style.zIndex = '0'; // Ensure it's behind text (if possible, though fixed/abs might sit on top depending on context)
     
     document.body.appendChild(layer);
     return layer;
@@ -172,7 +174,12 @@
   });
 
   // Scroll & Resize
-  window.addEventListener('scroll', () => {
+  window.addEventListener('scroll', (e) => {
+    // Ignore scroll events from Swiper to avoid performance issues or conflicts
+    if (e.target && e.target.classList && (e.target.classList.contains('swiper') || e.target.closest('.swiper'))) {
+      return;
+    }
+    
     if (selectionLayers.length > 0) updateSelection();
     // Underlines are absolute, so they scroll with page naturally. No update needed for scroll!
   }, true);

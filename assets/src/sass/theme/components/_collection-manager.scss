@@ -133,22 +133,6 @@
     min-width: 75vw!important;
     }
 }
-.cm-grid .single-cards, .cm-grid .col-lg-4 {
-    max-width: calc(32.5vw - $spacer)!important;
-    width: auto!important;
-    margin: math.div($spacer, 2)!important;
-    margin-bottom: $spacer!important;
-    margin-top: 0!important;
-    @include media-breakpoint-down(md) { 
-    max-width: calc(48.5vw - $spacer)!important;
-    }
-    @include media-breakpoint-down(sm) { 
-    margin: math.div($spacer-sm, 2)!important;
-    margin-bottom: $spacer-sm!important;
-    margin-top: 0!important;
-    min-width: calc(100% - $spacer-sm)!important;
-    }
-}
 .cm-carousel__track {
   display: grid;
   grid-auto-flow: column;
@@ -165,10 +149,11 @@
     background: $color-filter-bar;
     border-radius: 100vw;
   }
-}
 
-.cm-card--slide {
-  scroll-snap-align: start;
+  /* Snap sulle card dirette */
+  .single-cards {
+    scroll-snap-align: start;
+  }
 }
 
 /* Variante compatibile con la tua estetica “chips/border” */

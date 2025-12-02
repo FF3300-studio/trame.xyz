@@ -1,11 +1,13 @@
 import Lenis from '@studio-freight/lenis'
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 import './text-effects.js'
 
 const lenis = new Lenis({
   duration: 1.2,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-  direction: 'both', // vertical, horizontal
-  gestureDirection: 'both', // vertical, horizontal, both
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  direction: 'vertical', // SOLO verticale per non interferire con carousel orizzontale
+  gestureDirection: 'vertical', // SOLO verticale
   smooth: true,
   mouseMultiplier: 1,
   smoothTouch: false,
@@ -22,7 +24,6 @@ function raf(time) {
 }
 
 requestAnimationFrame(raf)
-
 
 // /* FILTERS */
 

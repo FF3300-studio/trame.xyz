@@ -1,4 +1,3 @@
-@use "sass:math";
 @use "../shared" as *;
 
 .blocks-container {
@@ -15,37 +14,22 @@
 }
 
 .row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: math.div(-$spacer, 2);
-  margin-right: math.div(-$spacer, 2);
+  margin: 0 auto;
+  padding: 0;
   margin-bottom: $spacer * 2;
-  padding: 0; // Reset padding if any
 
   @include media-breakpoint-down(sm) {
     margin-bottom: $spacer-sm;
-    margin-left: math.div(-$spacer-sm, 2);
-    margin-right: math.div(-$spacer-sm, 2);
+    padding-left: $spacer-sm;
+    padding-right: $spacer-sm;
   }
 
-  .column {
-    padding-left: math.div($spacer, 2);
-    padding-right: math.div($spacer, 2);
-    display: flex;
-    flex-direction: column;
+  [class^="col-"] {
+    padding: 0;
 
     @include media-breakpoint-down(sm) {
-      padding-left: math.div($spacer-sm, 2);
-      padding-right: math.div($spacer-sm, 2);
       max-width: 100%;
-      margin-bottom: $spacer; // Add vertical spacing between stacked columns
-    }
-
-    .blocks {
-      height: 100%;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
+      margin: inherit 0;
     }
   }
 }

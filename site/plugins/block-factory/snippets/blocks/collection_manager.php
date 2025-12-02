@@ -181,14 +181,14 @@ $activeColor = $categoryRegistry[$activeSlug]['color'] ?? null;
     <div class="cm-carousel" role="region" aria-label="<?= esc($title ?: 'Carousel') ?>">
       <div class="cm-carousel__track" tabindex="0">
         <?php foreach ($items as $item): ?>
-          <?php snippet('card-grid', [
-            'item'           => $item,
-            'direction'      => 'column',
-            'thumb_toggle'   => true,
-            'tag_toggle'     => true,
-            'big'            => false,
-            'category_color' => true,
-          ]) ?>
+            <?php snippet('card-grid', [
+              'item'            => $item,
+              'direction'       => 'column',
+              'thumb_toggle'    => true,
+              'tag_toggle'      => true,
+              'big'             => false,
+              'category_color'  => true,
+            ]) ?>
         <?php endforeach; ?>
       </div>
     </div>
