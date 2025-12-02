@@ -210,6 +210,10 @@
             background-color: $color-hover;
             color: $color-white;
           }
+          &.active {
+            background-color: $color-hover!important;
+            color: $color-white!important;
+          }
         }
       }
     }

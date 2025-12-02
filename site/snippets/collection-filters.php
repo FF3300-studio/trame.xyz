@@ -57,12 +57,12 @@ foreach ($categories as $category) {
 
     echo "
     .single-filter.{$nome} {
-        background-color: {$colore}!important;
+        background-color: {$colore};
         transition: none;
     }
 
     .single-filter:hover.{$nome} {
-        background-color: {$colore}!important;
+        background-color: {$colore};
         transition: none;
     }
     ";
