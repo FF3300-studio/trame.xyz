@@ -28,7 +28,7 @@
 <!-- GRIGLIA EVENTI PASSATI -->
 <?php if ($pastEvents->isNotEmpty()): ?>
     <?php if ($futureEvents->isNotEmpty()): ?>
-        <hr style="margin-bottom: 15px">
+        <hr style="margin: 15px">
     <?php endif; ?>
     <h5 class="label-grid old"><strong>PASSATE</strong></h5>
     <div class="block-grid-a-list" style="">
