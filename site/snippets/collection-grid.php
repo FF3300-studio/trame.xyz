@@ -30,8 +30,8 @@ if (!empty($activeCategories)) {
     <?php endif; ?>
 
     <div class="block-grid-a-list">        
-        <?php foreach ($filtered->sortBy('appuntamenti', 'desc') as $child): ?>
-            <?php snippet('card-grid', [
+        <?php foreach ($filtered->sortBy('data_di_pubblicazione', 'desc') as $child): ?>
+            <?php snippet('card-grid', [ 
                 'item' => $child,
                 'thumb_toggle' => false, 
                 'tag_toggle' => true,

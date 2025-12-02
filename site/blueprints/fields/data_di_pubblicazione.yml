@@ -1,0 +1,8 @@
+label: Data di pubblicazione
+width: 1/1
+type: date
+default: now
+time: false
+translate: false
+disabled: false
+whenQuery: collection_toggle = false && parent_collection_options != 'calendar' &&  parent_collection_options != NULL

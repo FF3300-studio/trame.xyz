@@ -76,6 +76,16 @@ if ($typology === 'manuale') {
       $pool = $pool->filter(fn($p) => $childHasActiveCategory($p, $activeSlug));
     }
     $items = $pool;
+
+    // Sorting logic
+    if ($collectionPage->collection_options()->value() === 'calendar') {
+      $items = $items->sortBy(function ($page) {
+        $structure = $page->appuntamenti()->toStructure();
+        return $structure->isNotEmpty() ? $structure->first()->giorno()->toDate() : PHP_INT_MAX;
+      }, 'asc');
+    } else {
+      $items = $items->sortBy('data_di_pubblicazione', 'desc');
+    }
   }
 }
 

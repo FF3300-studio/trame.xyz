@@ -7,6 +7,9 @@ fields:
     label: Dettagli del contenuto
     type: headline
 
+  data_di_pubblicazione:
+    extends: fields/data_di_pubblicazione
+
   immagine:
     extends: fields/immagine
     label: Seo image
