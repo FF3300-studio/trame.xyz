@@ -179,7 +179,7 @@ a.related span {
   flex-grow: 0;
 
   // spacing orizzontale via padding, non margin
-  padding: 0 math.div($spacer, 2);
+  //padding: 0 math.div($spacer, 2);
   margin: 0;
   margin-bottom: $spacer;
 

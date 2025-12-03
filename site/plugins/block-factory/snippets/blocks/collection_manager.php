@@ -167,12 +167,12 @@ $activeColor = $categoryRegistry[$activeSlug]['color'] ?? null;
         <h3 class="cm-block__title"><?= esc($title) ?></h3>
       <?php endif; ?>
       <?php if ($activeLabel): ?>
-        <span
+        <!--<span
           class="cm-chip"
           <?= $activeColor ? ' style="--chip:' . esc($activeColor) . ';"' : '' ?>
         >
           <?= esc($activeLabel) ?>
-        </span>
+        </span>-->
       <?php endif; ?>
     </header>
   <?php endif; ?>

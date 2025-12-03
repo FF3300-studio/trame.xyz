@@ -667,15 +667,16 @@ hr {
 }
 /* BLOCK grid list */
 .block-grid-a-list {
-  padding: 0 $spacer-sm + 2px;
+  padding: $spacer;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  gap: $spacer;
   // spacing orizzontale tramite padding delle card
-  margin: 0 math.div(-$spacer, 2);
+  //margin: 0 math.div(-$spacer, 2);
 
   @include media-breakpoint-down(sm) {
-    margin: 0 math.div(-$spacer-sm, 2);
+    //margin: 0 math.div(-$spacer-sm, 2);
   }
 
   .single-item {
