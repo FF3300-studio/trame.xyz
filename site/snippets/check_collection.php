@@ -1,4 +1,4 @@
-<!-- Verific a se la pagina ha dei figli (e quindi è una collection) -->
+<!-- Verifica se la pagina ha dei figli (e quindi è una collection) -->
 <?php if($page->hasChildren() == true): ?>
     <!-- se la COLLECTION ha una vista MAPPA -->
     <?php if($page->collection_options() == 'map'): ?>

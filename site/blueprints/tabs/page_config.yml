@@ -33,6 +33,7 @@ columns:
           blog: blog
           map: map
           calendar: calendar
+          generic: generic
 
       collection_categories_manager_toggle:
         label: Gestore delle categorie
