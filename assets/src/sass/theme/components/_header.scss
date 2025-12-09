@@ -26,7 +26,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.15s linear;
-    z-index: 5;
+    z-index: 2000;
     @include media-breakpoint-down(md) {
       display: flex;
     }
@@ -34,7 +34,7 @@
       opacity: 1;
       pointer-events: all;
       position: fixed;
-      z-index: 1;
+      z-index: 2000;
     }
     .navigation-mobile-flexbox {
       flex-direction: row;
@@ -80,7 +80,7 @@
   top: unset;
   height: 32px;
   display: none;
-  z-index: 99;
+  z-index: 2001;
   @include media-breakpoint-down(md) {
     display: inline-block;
   }
@@ -130,7 +130,7 @@
 .site-header {
   position: sticky;
   top: 0;
-  z-index: 199;
+  z-index: 300;
   width: auto;
   padding: 0;
   border-bottom: 0;
