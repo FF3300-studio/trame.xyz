@@ -184,20 +184,18 @@ a.related span {
   margin-bottom: 0;
 
   // 4 card per riga
-  min-width: 25%;
-  max-width: 25%;
+  min-width: calc(25% - #{math.div($spacer * 3, 4)});
+  max-width: calc(25% - #{math.div($spacer * 3, 4)});
 
   @include media-breakpoint-down(md) {
     // 2 card per riga
-    padding: 0 math.div($spacer-sm, 2);
-    min-width: 50%;
-    max-width: 50%;
+    min-width: calc(50% - #{math.div($spacer, 2)});
+    max-width: calc(50% - #{math.div($spacer, 2)});
     margin-bottom: 0;
   }
 
   @include media-breakpoint-down(sm) {
     // 1 card per riga
-    padding: 0 math.div($spacer-sm, 2);
     min-width: 100%;
     max-width: 100%;
     flex-grow: 1;
