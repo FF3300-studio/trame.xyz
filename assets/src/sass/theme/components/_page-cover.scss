@@ -1,4 +1,5 @@
 @use "../shared" as *;
+@use "sass:math";
 @use "../base/typography" as typo;
 
 /* COMPONENTE: PAGE COVER */
@@ -48,12 +49,14 @@
     
     // Larger font size for cards-text in page-informations
     .cards-text p {
-      margin-top: 7.5px;
-      @include typo.large;
+      margin-top: math.div($spacer, 2);
+      @include typo.extralarge;
+      margin-bottom: math.div($spacer, 2);
     }
 
     .cards-title h2{
       font-weight: $font-extrabold;
+      font-size: $ultralarge-xl;
     }
   }
 }

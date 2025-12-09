@@ -39,6 +39,7 @@
   }
   .cards-text p {
     margin-top: math.div($spacer, 2);
+    margin-bottom: $spacer;
   }
   .cards-dates span,
   .cards-place span {
@@ -109,6 +110,10 @@
   }
 }
 .time {
+  margin-top: math.div($spacer, 2);
+  font-size: $large-xl;
+  color: $color-theme;
+  font-weight: $font-bold;
   font-family: "Geist-mono";
   display: flex;
   max-width: 50%;

@@ -72,6 +72,21 @@ if (!$deadline && $current->appuntamenti()->isNotEmpty()) {
 <?php else: ?>
 <?php endif; ?>
 
+<?php if($item->appuntamenti()->isNotEmpty()): ?>
+    <div>
+        <?php $appuntamenti = $item->appuntamenti()->toStructure() ?>
+        <div class="cards-dates" style="display: flex; width: 100%; justify-content: space-between; flex-wrap:nowrap;">
+            <?php foreach($appuntamenti as $appuntamento): ?>
+            <?php 
+            $formatter = new IntlDateFormatter('it_IT', IntlDateFormatter::NONE, IntlDateFormatter::NONE);
+            $formatter->setPattern('d.MM.Y'); // Modello simile a %d – %b – %Y;
+            ?>
+            <span style=" text-transform: capitalize;" class="time"><?= $formatter->format($appuntamento->giorno()->toDate()) ?></span>  <span class="time" style=""><?= $appuntamento->orario_inizio()->toDate('H:i') ?>-<?= $appuntamento->orario_fine()->toDate('H:i') ?></span>
+            <?php endforeach; ?>
+        </div>
+    </div>
+<?php endif; ?>
+
 <div class="cards-text">
     <?php echo $item->descrizione()->kirbytext(); ?>
 </div>
@@ -94,20 +109,7 @@ if (!$deadline && $current->appuntamenti()->isNotEmpty()) {
 
 <?php endif; ?>
 
-<?php if($item->appuntamenti()->isNotEmpty()): ?>
-    <div>
-        <?php $appuntamenti = $item->appuntamenti()->toStructure() ?>
-        <div class="cards-dates" style="display: flex; width: 100%; justify-content: space-between; flex-wrap:nowrap;">
-            <?php foreach($appuntamenti as $appuntamento): ?>
-            <?php 
-            $formatter = new IntlDateFormatter('it_IT', IntlDateFormatter::NONE, IntlDateFormatter::NONE);
-            $formatter->setPattern('d.MM.Y'); // Modello simile a %d – %b – %Y;
-            ?>
-            <span style=" text-transform: capitalize;" class="time"><?= $formatter->format($appuntamento->giorno()->toDate()) ?></span>  <span class="time" style=""><?= $appuntamento->orario_inizio()->toDate('H:i') ?>-<?= $appuntamento->orario_fine()->toDate('H:i') ?></span>
-            <?php endforeach; ?>
-        </div>
-    </div>
-<?php endif; ?>
+
 
 <?php if($item->dove()->isNotEmpty()): ?>
 <div class="location">
