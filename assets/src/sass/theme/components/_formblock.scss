@@ -60,7 +60,7 @@
 			background-color: $color-white;
 			border: 2px solid $color-black;
 			padding: math.div($spacer, 2);
-			border-radius: 100vw;
+			//border-radius: 100vw;
 			@include typo.micro;
 			width: auto!important;
 			min-width: calc(100% - 30px)!important;
@@ -78,7 +78,7 @@
 			}
 		}
 		textarea{
-			border-radius: 0!important;
+			//border-radius: 0!important;
 			min-width: fit-content!important;
 			font-size: $small!important;
 			margin: 0 $spacer!important;
@@ -92,6 +92,8 @@
 		margin-bottom: $spacer;
 		input {
 			@include typo.button;
+			font-family: 'Grid'!important;
+			font-variation-settings: 'wght' 900;
 			background-color: $color-black;
 			color: $color-white;
 			display: inline-block;
@@ -200,8 +202,8 @@
 	font-weight: 700;
 }
 * .formblock .formblock__submit input{
-	text-transform: capitalize!important;
-	font-weight: 700!important;
+	text-transform: uppercase!important;
+	font-weight: 900!important;
 }
 
 * label.formfield__option__label {

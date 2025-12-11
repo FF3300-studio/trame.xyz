@@ -149,7 +149,7 @@
 @mixin button {
   padding: math.div($spacer, 2.5) $spacer;
   @include extrasmall;
-  border-radius: 100vw;
+  //border-radius: 100vw;
   border: 2px solid $color-black;
 }
 
