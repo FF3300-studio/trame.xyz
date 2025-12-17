@@ -108,3 +108,7 @@ footer {
     gap: $spacer-xl !important;
   }
 }
+.footer figure {
+  display: flex;
+  justify-content: center;
+}
