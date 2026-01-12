@@ -10,7 +10,11 @@ fields:
     type: text
     width: 1/2
   colore_categoria:
-    label: Colore della categoria
+    label: Colore Sfondo
+    type: color
+    width: 1/2
+  colore_testo:
+    label: Colore Testo
     type: color
     width: 1/2
   descrizione:
