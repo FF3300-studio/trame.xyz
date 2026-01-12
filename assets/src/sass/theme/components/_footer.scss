@@ -112,3 +112,14 @@ footer {
   display: flex;
   justify-content: center;
 }
+
+@media screen and (max-width: 900px) {
+  .blocks-container.footer figure {
+    margin-bottom: $spacer*2;
+  }
+  .blocks-container.footer .column {
+    width: 50%;
+    max-width: 50%;
+    flex: 0 0 50%;
+  }
+}
