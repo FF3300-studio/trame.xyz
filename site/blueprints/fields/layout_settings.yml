@@ -2,6 +2,10 @@ fields:
   custom_css:
     label: Inserisci qui del CSS relativo al banner
     type: code-editor
+  custom_class:
+    label: Classe Personalizzata
+    type: text
+    width: 1/2
   sticky:
     label: Funzione scroll sticky
     type: toggle

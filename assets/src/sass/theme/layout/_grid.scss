@@ -27,6 +27,14 @@
     margin-bottom: $spacer-sm;
   }
 
+  &.mb-double {
+    margin-bottom: $spacer * 2;
+
+    @include media-breakpoint-down(sm) {
+      margin-bottom: $spacer-sm * 2;
+    }
+  }
+
   > * {
     padding-left: math.div($spacer, 2);
     padding-right: math.div($spacer, 2);
