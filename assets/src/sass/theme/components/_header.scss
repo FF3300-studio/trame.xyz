@@ -235,3 +235,13 @@
     font-variation-settings: "wght" 0, "BACK" 600, "SHAP" 200 !important;
   }
 }
+
+// Container styles for mobile language switcher
+.mobile-languages {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: $spacer*3;
+  font-size: $large-sm;
+}

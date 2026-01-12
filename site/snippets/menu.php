@@ -37,14 +37,16 @@
       <div class="navigation-mobile-flexbox">
         <?php snippet('mobile-menuitem-list', ['items' => $items, 'accordion__item' => true]) ?>
         <?php if($site->languages_switch()->toBool()): ?>
-          <?php foreach($langs as $key => $language): ?>
-            <a class="title_link language-link <?php e($kirby->language() == $language, 'active') ?>" href="<?= $page->url($language->code()) ?>" hreflang="<?= $language->code() ?>" style="<?php e($key === 0, 'margin-left: 20px;') ?>">
-              <?= strtoupper($language->code()) ?>
-            </a>
-            <?php if($key !== $last_key): ?>
-              <span style="font-family: 'Grid'; font-variation-settings: 'wght' 1000;">/</span>
-            <?php endif; ?>
-          <?php endforeach ?>
+          <div class="mobile-languages">
+            <?php foreach($langs as $key => $language): ?>
+              <a class="title_link language-link <?php e($kirby->language() == $language, 'active') ?>" href="<?= $page->url($language->code()) ?>" hreflang="<?= $language->code() ?>">
+                <?= strtoupper($language->code()) ?>
+              </a>
+              <?php if($key !== $last_key): ?>
+                <span style="font-family: 'Grid'; font-variation-settings: 'wght' 1000;">/</span>
+              <?php endif; ?>
+            <?php endforeach ?>
+          </div>
         <?php endif ?>
       </div>
     </div>
