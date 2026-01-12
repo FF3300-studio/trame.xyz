@@ -6,10 +6,24 @@
       <div class="navigation navigation-desktop">
         <?php snippet('menuitem-list', ['items' => $items, 'accordion__item' => true]) ?>
         <?php if($site->languages_switch()->toBool()): ?>
-          <?php foreach($kirby->languages() as $language): ?>
-            <a class="title_link <?php e($kirby->language() == $language, 'active') ?>" href="<?= $page->url($language->code()) ?>" hreflang="<?php echo $language->code() ?>" style="font-family: 'Grid'; font-variation-settings: 'wght' 1000;">
-              <?= html($language->code()) ?>
+          <?php 
+          $orderedCodes = ['it', 'en', 'es'];
+          $langs = [];
+          foreach($orderedCodes as $code) {
+              if($lang = $kirby->language($code)) {
+                  $langs[] = $lang;
+              }
+          }
+          $keys = array_keys($langs);
+          $last_key = end($keys);
+          ?>
+          <?php foreach($langs as $key => $language): ?>
+            <a class="title_link language-link <?php e($kirby->language() == $language, 'active') ?>" href="<?= $page->url($language->code()) ?>" hreflang="<?= $language->code() ?>" style="<?php e($key === 0, 'margin-left: 20px;') ?>">
+              <?= strtoupper($language->code()) ?>
             </a>
+            <?php if($key !== $last_key): ?>
+              <span style="font-family: 'Grid'; font-variation-settings: 'wght' 1000;">/</span>
+            <?php endif; ?>
           <?php endforeach ?>
         <?php endif ?>
       </div>
@@ -23,10 +37,13 @@
       <div class="navigation-mobile-flexbox">
         <?php snippet('mobile-menuitem-list', ['items' => $items, 'accordion__item' => true]) ?>
         <?php if($site->languages_switch()->toBool()): ?>
-          <?php foreach($kirby->languages() as $language): ?>
-            <a class="title_link <?php e($kirby->language() == $language, 'active') ?>" href="<?= $page->url($language->code()) ?>" hreflang="<?php echo $language->code() ?>" style="font-family: 'Grid'; font-variation-settings: 'wght' 1000;">
-              <?= html($language->code()) ?>
+          <?php foreach($langs as $key => $language): ?>
+            <a class="title_link language-link <?php e($kirby->language() == $language, 'active') ?>" href="<?= $page->url($language->code()) ?>" hreflang="<?= $language->code() ?>" style="<?php e($key === 0, 'margin-left: 20px;') ?>">
+              <?= strtoupper($language->code()) ?>
             </a>
+            <?php if($key !== $last_key): ?>
+              <span style="font-family: 'Grid'; font-variation-settings: 'wght' 1000;">/</span>
+            <?php endif; ?>
           <?php endforeach ?>
         <?php endif ?>
       </div>
