@@ -22,18 +22,20 @@ if (!empty($activeCategories)) {
         <?php $card_counter++; ?>
     <?php endforeach; ?>
     <?php if($card_counter <= 2 AND $card_counter != 0): ?>
+        <!--
         <style>
             .single-cards {
                 margin: 15px 0!important;
             }
         </style>
+        -->
     <?php endif; ?>
 
     <div class="block-grid-a-list">        
         <?php foreach ($filtered->sortBy('data_di_pubblicazione', 'desc') as $child): ?>
             <?php snippet('card-grid', [ 
                 'item' => $child,
-                'thumb_toggle' => false, 
+                'thumb_toggle' => true, 
                 'tag_toggle' => true,
                 'direction' => 'column',
                 'category_color' => $category_color ?? false,
