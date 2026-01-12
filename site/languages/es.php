@@ -12,7 +12,7 @@ return [
     'translations' => [
         
     ],
-    'url' => '/'
+    'url' => NULL
 ];
 
 ?>

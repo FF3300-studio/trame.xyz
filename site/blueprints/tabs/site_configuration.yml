@@ -63,6 +63,14 @@ sections:
         label: Menu
         width: 1/1
       #
+      languages_switch:
+        label: Selettore Lingue
+        type: toggle
+        width: 1/1
+        text: 
+          - "nascosto"
+          - "visibile"
+      #
       menu:
         type: structure
         label: Aggiungi, sostituisci o rimuovi una o più voci del menu
