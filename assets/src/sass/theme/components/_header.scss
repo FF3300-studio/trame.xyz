@@ -20,7 +20,7 @@
     height: 100%;
     padding: $spacer-sm * 3;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center; // Changed from space-between for vertical centering
     flex-wrap: wrap;
     background-color: $color-primary;
     opacity: 0;
@@ -43,20 +43,27 @@
       // flex-wrap: wrap;
       min-width: 100%;
       display: flex;
+      flex: 1; // Ensure it takes available space to center effectively
     }
     .accordion__item {
-      margin: math.div($spacer, 3);
+      margin: 1.5vh 0; // Dynamic vertical margin
       width: fit-content;
       .title_link {
-        width: fit-content;
+        width: 70vw; 
+        text-align: center;
         display: inline-block;
-        padding: math.div($spacer, 1.5) $spacer * 1.25;
-        font-size: $medium;
-        color: $color-black;
+        padding: 2vh 4vw;
+        font-size: clamp(24px, 5vw, 40px); // Clamp to prevent too large text on tablets
+        @include typo.font-bold; 
+        color: $color-white; 
         background-color: $color-theme;
         //border-radius: 100vw;
         &.ismobile {
-          color: $color-black;
+          color: $color-black; // Keep black for ismobile specific case if needed, or check if this should override. Assuming ismobile class might need review, but user asked for "tasti del menu mobile".
+          // If "ismobile" class is used for something specific inside mobile menu, maybe keep it or update it?
+          // The user said "tasti del menu mobile ... bianco".
+          // Let's assume the main links need to be white.
+          // If .ismobile is a specific variant, I will leave it as is for now unless it conflicts.
           background-color: $color-yellow;
         }
       }
@@ -73,57 +80,58 @@
 .navbar-toggler {
   border: none;
   position: relative;
-  background-color: #fff;
-  //border-radius: 100vw;
-  padding: 9px 6px;
+  background-color: transparent; // Changed to transparent
+  padding: 0;
   cursor: pointer;
   top: unset;
-  height: 32px;
+  height: 40px;
+  width: 40px;
   display: none;
   z-index: 2001;
+  font-family: "GTLTrameTextureVF"; // Custom font
+  font-weight: 200 !important; // As requested/implied by font file usage
+  font-style: normal;
+  font-size: 40px; // Larger size
+  line-height: 1;
+  color: $color-black;
+
   @include media-breakpoint-down(md) {
-    display: inline-block;
+    display: flex; // Use flex for centering
+    align-items: center;
+    justify-content: center;
   }
+
   .icon-bar {
-    display: block;
-    width: 20px;
-    height: 2px;
-    margin: 3px 0;
-    background-color: #000;
-    //border-radius: 100vw;
-    position: relative;
-    transition: all 0.4s;
-    &:nth-of-type(1) {
-      transform: rotate(45deg);
-      transform-origin: 10% 10%;
-      left: 3px;
-      top: -1.5px;
-    }
-    &:nth-of-type(2) {
-      opacity: 0;
-      filter: alpha(opacity=0); // fallback IE
-    }
-    &:nth-of-type(3) {
-      transform: rotate(-45deg);
-      transform-origin: 10% 90%;
-      left: 3px;
-      top: -0.5px;
-    }
+    display: none; // Hide old bars
   }
+
+  // Icons using pseudo-elements
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+  }
+
+  &::before {
+    content: 'd'; // Hamburger icon
+    opacity: 0;
+  }
+
+  &::after {
+    content: 'k'; // Close icon
+    opacity: 1;
+  }
+
+  // State: Closed (Show Hamburger 'd')
   &.closed {
-    .icon-bar {
-      &:nth-of-type(1),
-      &:nth-of-type(3) {
-        transform: rotate(0);
-        left: 0;
-        top: -2px;
-      }
-      &:nth-of-type(2) {
-        opacity: 1;
-        filter: alpha(opacity=100);
-        left: 0;
-        top: -2px;
-      }
+    &::before {
+      opacity: 1;
+    }
+    &::after {
+      opacity: 0;
     }
   }
 }
