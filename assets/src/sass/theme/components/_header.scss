@@ -25,7 +25,7 @@
     background-color: $color-primary;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.15s linear;
+    // transition: opacity 0.15s linear; // Removed for instant appearance
     z-index: 2000;
     @include media-breakpoint-down(md) {
       display: flex;
@@ -88,10 +88,10 @@
   width: 40px;
   display: none;
   z-index: 2001;
-  font-family: "GTLTrameTextureVF"; // Custom font
-  font-weight: 200 !important; // As requested/implied by font file usage
+  font-family: "Trame-Menu"; // Custom font Trame-Menu
+  font-weight: 400; 
   font-style: normal;
-  font-size: 40px; // Larger size
+  font-size: 40px; 
   line-height: 1;
   color: $color-black;
 
@@ -102,36 +102,30 @@
   }
 
   .icon-bar {
-    display: none; // Hide old bars
+    display: none; 
   }
 
   // Icons using pseudo-elements
-  &::before,
-  &::after {
+  &::before {
+    content: 'd'; 
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    transition: opacity 0.3s ease;
-  }
-
-  &::before {
-    content: 'd'; // Hamburger icon
-    opacity: 0;
+    
+    // Variable font transition settings
+    font-variation-settings: "wght" 0; // Default (Open/Close icon state - wght 0)
+    transition: font-variation-settings 0.3s ease;
   }
 
   &::after {
-    content: 'k'; // Close icon
-    opacity: 1;
+    display: none; // Remove 'k'
   }
 
-  // State: Closed (Show Hamburger 'd')
+  // State: Closed (Hamburger - wght 200)
   &.closed {
     &::before {
-      opacity: 1;
-    }
-    &::after {
-      opacity: 0;
+      font-variation-settings: "wght" 200; // Closed state
     }
   }
 }
