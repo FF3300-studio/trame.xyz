@@ -6,8 +6,10 @@ when:
   collection_categories_manager_toggle: true
 fields:
   nome:
-    label: Nome della categoria
-    type: text
+    label: Nome della categoria (da Attrezzatura)
+    type: pages
+    query: site.find('attrezzatura').children
+    max: 1
     width: 1/2
   colore_categoria:
     label: Colore Sfondo

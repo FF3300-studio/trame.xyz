@@ -56,7 +56,8 @@ if (($category_color ?? false) === true && $page->parent_category_manager()->isN
 
     echo "<style>";
     foreach ($categories as $category) {
-        $nome = Str::slug($category->nome());
+        $catName = ($p = $category->nome()->toPage()) ? $p->title()->value() : $category->nome()->value();
+        $nome = Str::slug($catName);
         $colore = $category->colore_categoria();
 
         echo "

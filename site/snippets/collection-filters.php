@@ -18,7 +18,8 @@ if ($allCategories->isNotEmpty() && $collection->isNotEmpty()): ?>
                     <?php foreach ($filteredCategories as $category): ?>
                         <?php if ($gruppo == $category->gruppo()): ?>
                             <?php
-                                $slug = Str::slug($category->nome());
+                                $catName = ($p = $category->nome()->toPage()) ? $p->title()->value() : $category->nome()->value();
+                                $slug = Str::slug($catName);
                                 $newActive = $activeCategories;
 
                                 // Toggle logica: aggiungi o rimuovi categoria
@@ -36,7 +37,7 @@ if ($allCategories->isNotEmpty() && $collection->isNotEmpty()): ?>
                             ?>
                             <a href="<?= $url ?>"
                                class="single-filter control <?= $slug ?> <?php if (in_array($slug, $activeCategories)): ?>active<?php endif; ?>">
-                                <?= $category->nome(); ?>
+                                <?= $catName ?>
                             </a>
                             <?php $filter_counter++; ?>
                         <?php endif; ?>
@@ -52,7 +53,8 @@ $categories = $page->parent_category_manager()->toStructure();
 
 echo "<style>";
 foreach ($categories as $category) {
-    $nome = Str::slug($category->nome());
+    $catName = ($p = $category->nome()->toPage()) ? $p->title()->value() : $category->nome()->value();
+    $nome = Str::slug($catName);
     $colore = $category->colore_categoria();
 
     echo "

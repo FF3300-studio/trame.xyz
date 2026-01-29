@@ -2,7 +2,7 @@
 <?php $deadline_toggle = "off"; ?>
 <?php $deadline = $item->deadline() OR NULL ?>
 <?php $facilitato = false ?>
-<div class="cards-details" style="<?php if($page->parent() !== NULL): ?>padding: 15px; max-width: 1280px; min-width: fit-content; margin: 0 auto!important;<?php else: ?>padding: 15px;<?php endif; ?> margin: 0;" class="cards-info" <?php  if($direction == "row"): ?>style="margin-left: 15px"<?php endif; ?>>
+<div class="cards-details" style="<?php if($page->parent() === NULL): ?>padding: 15px;<?php endif; ?> margin: 0;" class="cards-info" <?php  if($direction == "row"): ?>style="margin-left: 15px"<?php endif; ?>>
 <?php
 // Data di oggi
 $today = date('Y-m-d', strtotime('today'));

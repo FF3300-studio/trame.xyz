@@ -1,33 +1,37 @@
 <?php if (!$page->parents()->toArray()): ?>
   <!-- Nessuna azione se non ci sono genitori -->
 <?php else: ?>
-  <div class="cover-container" style="flex-direction: row-reverse"> <!-- Apertura div cover-container -->
-      <?php if ($page->parent()->collection_options() == 'map'): ?>
-        <div class="cover-first-element"> <!-- Apertura div cover-first-element -->
-          <?php snippet('page-cover-map', [
-            'collection_parent' => $page->parent(),
-            'collection' => $page->parent()->children()->filterBy('id', $page->id())
-          ]) ?>
-        </div>
-      <?php elseif ($thumbnail = $page->thumbnail()->toFile()): ?>
-        <div class="cover-first-element"> <!-- Apertura div cover-first-element -->
-          <img src="<?= $thumbnail->url() ?>" alt="<?= $page->title() ?>">
-          <?php $image = $thumbnail->toFile(); ?>
-          <?php snippet('image',[
-              'image' => $image, 
-          ]) ?>
-        </div> <!-- Chiusura div cover-first-element -->
-      <?php endif; ?>
+  <div class="blocks-container">
+    <div class="blocks-container-inner">
+      <div class="cover-container" style="flex-direction: row-reverse"> <!-- Apertura div cover-container -->
+          <?php if ($page->parent()->collection_options() == 'map'): ?>
+            <div class="cover-first-element"> <!-- Apertura div cover-first-element -->
+              <?php snippet('page-cover-map', [
+                'collection_parent' => $page->parent(),
+                'collection' => $page->parent()->children()->filterBy('id', $page->id())
+              ]) ?>
+            </div>
+          <?php elseif ($thumbnail = $page->thumbnail()->toFile()): ?>
+            <div class="cover-first-element"> <!-- Apertura div cover-first-element -->
+              <img src="<?= $thumbnail->url() ?>" alt="<?= $page->title() ?>">
+              <?php $image = $thumbnail->toFile(); ?>
+              <?php snippet('image',[
+                  'image' => $image, 
+              ]) ?>
+            </div> <!-- Chiusura div cover-first-element -->
+          <?php endif; ?>
 
-    <div <?php if(!$page->thumbnail()->isNotEmpty()): ?> style="flex-grow: 1"<?php endif; ?> class="page-informations <?= strtolower($page->child_category_selector()) ?>"> <!-- Apertura div page-informations -->
-      <?php snippet('card-info-page',[
-              'item' => $page,
-              'direction' => 'column',
-              'tag_toggle' => true,
-          ])?>
-    </div> <!-- Chiusura div page-informations -->
+        <div <?php if(!$page->thumbnail()->isNotEmpty()): ?> style="flex-grow: 1"<?php endif; ?> class="page-informations <?= strtolower($page->child_category_selector()) ?>"> <!-- Apertura div page-informations -->
+          <?php snippet('card-info-page',[
+                  'item' => $page,
+                  'direction' => 'column',
+                  'tag_toggle' => true,
+              ])?>
+        </div> <!-- Chiusura div page-informations -->
 
-  </div> <!-- Chiusura div cover-container -->
+      </div> <!-- Chiusura div cover-container -->
+    </div>
+  </div>
 
   <?php
 
@@ -38,7 +42,8 @@
 
     echo "<style>";
     foreach ($categories as $category) {
-        $nome = Str::slug($category->nome()); // Crea una classe valida CSS-friendly
+        $catName = ($p = $category->nome()->toPage()) ? $p->title()->value() : $category->nome()->value();
+        $nome = Str::slug($catName); // Crea una classe valida CSS-friendly
         $colore = $category->colore_categoria();
 
         // Stampa la classe CSS

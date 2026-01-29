@@ -19,31 +19,35 @@ if ($correlati->count() > 0):
   $genitori         = array_values($parents);
   $showParentTitle  = count($genitori) >= 2;
 ?>
-<div class="blocks related-content-container" style="margin-top: 60px;">
-  <h5 class="label-grid correlati" style="color: white"><strong>Contenuti correlati:</strong></h5>
+<div class="blocks-container">
+  <div class="blocks-container-inner">
+    <div class="blocks related-content-container" style="margin-top: 60px;">
+      <h5 class="label-grid correlati" style="color: white"><strong>Contenuti correlati:</strong></h5>
 
-  <?php foreach ($genitori as $genitore): ?>
-    <div class="related-group" style="margin-top: 40px;">
-      <?php if ($showParentTitle): ?>
-        <h6 class="related-parent-title">
-          <?= $genitore->title()->escape() ?>
-        </h6>
-      <?php endif; ?>
+      <?php foreach ($genitori as $genitore): ?>
+        <div class="related-group" style="margin-top: 40px;">
+          <?php if ($showParentTitle): ?>
+            <h6 class="related-parent-title">
+              <?= $genitore->title()->escape() ?>
+            </h6>
+          <?php endif; ?>
 
-      <div class="block-grid-a-list" style="">
-        <?php foreach ($groups[$genitore->id()] as $child): ?>
-          <?php snippet('card-grid', [
-            'item' => $child,
-            'thumb_toggle' => true,
-            'tag_toggle' => false,
-            'correlati' => true,
-            'direction' => 'column',
-            'category_color' => false,
-            'big' => false,
-          ]) ?>
-        <?php endforeach; ?>
-      </div>
+          <div class="block-grid-a-list" style="">
+            <?php foreach ($groups[$genitore->id()] as $child): ?>
+              <?php snippet('card-grid', [
+                'item' => $child,
+                'thumb_toggle' => true,
+                'tag_toggle' => true,
+                'correlati' => true,
+                'direction' => 'column',
+                'category_color' => false,
+                'big' => false,
+              ]) ?>
+            <?php endforeach; ?>
+          </div>
+        </div>
+      <?php endforeach; ?>
     </div>
-  <?php endforeach; ?>
+  </div>
 </div>
 <?php endif; ?>

@@ -1,5 +1,8 @@
         <?php foreach($tutte_le_categorie as $cat_item): ?>
-            <?php if($cat_item->nome() == $category): ?>
+            <?php 
+            $catName = ($p = $cat_item->nome()->toPage()) ? $p->title()->value() : $cat_item->nome()->value(); 
+            ?>
+            <?php if($catName == $category): ?>
                 background-color: <?= $cat_item->colore_categoria() ?>;
                 <?php if($cat_item->colore_testo()->isNotEmpty()): ?>
                     color: <?= $cat_item->colore_testo() ?> !important;

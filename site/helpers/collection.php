@@ -16,7 +16,8 @@ function buildCategoryMarkerMap(Structure $categories): array
     $map = [];
 
     foreach ($categories as $category) {
-        $name = (string)$category->nome();
+        $catName = ($p = $category->nome()->toPage()) ? $p->title()->value() : $category->nome()->value();
+        $name = (string)$catName;
         $slug = Str::slug($name);
 
         if ($slug === '') {
@@ -77,7 +78,7 @@ function getFilteredCategories(Pages $collection, Structure $allCategories): Str
     }
 
     return $allCategories->filter(
-        static fn($category) => in_array(Str::slug($category->nome()), $selected, true)
+        static fn($category) => in_array(Str::slug(($p = $category->nome()->toPage()) ? $p->title()->value() : $category->nome()->value()), $selected, true)
     );
 }
 
