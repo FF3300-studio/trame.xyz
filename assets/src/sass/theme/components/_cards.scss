@@ -261,7 +261,7 @@ span#deadline.laptop {
   
   // Modifiers
   &.manca-poco {
-    // color: $color-yellow; // Already default
+    color: $color-yellow; // Already default
   }
   &.iscriviti {
     // Let's set default to yellow and remove specific overrides unless necessary.
