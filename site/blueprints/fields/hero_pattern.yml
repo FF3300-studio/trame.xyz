@@ -5,6 +5,22 @@ fields:
     type: toggle
     width: 1/1
 
+  hero_pattern_animation_1:
+    label: Attiva Animazione Layer 1
+    type: toggle
+    width: 1/2
+    when:
+      hero_pattern_active: true
+
+  hero_pattern_text_1_alt:
+    label: Testo Alternativo Layer 1
+    type: text
+    width: 1/2
+    when:
+      hero_pattern_active: true
+      hero_pattern_animation_1: true
+  line:
+    type: line
   hero_pattern_text_1:
     label: Testo Layer 1
     type: text
@@ -46,21 +62,6 @@ fields:
     tooltip: "{{ value }}"
     when:
       hero_pattern_active: true
-
-  hero_pattern_animation_1:
-    label: Attiva Animazione Layer 1
-    type: toggle
-    width: 1/2
-    when:
-      hero_pattern_active: true
-
-  hero_pattern_text_1_alt:
-    label: Testo Alternativo Layer 1
-    type: text
-    width: 1/2
-    when:
-      hero_pattern_active: true
-      hero_pattern_animation_1: true
 
   hero_pattern_text_2:
     label: Testo Layer 2
