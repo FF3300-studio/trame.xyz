@@ -1,0 +1,152 @@
+type: group
+fields:
+  hero_pattern_active:
+    label: Attiva Pattern Hero
+    type: toggle
+    width: 1/1
+
+  hero_pattern_text_1:
+    label: Testo Layer 1
+    type: text
+    width: 1/3
+    when:
+      hero_pattern_active: true
+
+  hero_pattern_color_1:
+    label: Colore Layer 1
+    type: select
+    width: 1/3
+    default: "#000000"
+    options:
+      - value: "#000000"
+        text: Nero
+      - value: "#ffffff"
+        text: Bianco
+      - value: "#4989c8"
+        text: Blu Tema
+      - value: "#6ebf9b"
+        text: Verde Tema
+      - value: "#ffe14e"
+        text: Giallo
+      - value: "#db4d39"
+        text: Rosso
+      - value: "#30407f"
+        text: Blu Scuro
+    when:
+      hero_pattern_active: true
+
+  hero_pattern_weight_1:
+    label: Peso Font Layer 1
+    type: range
+    min: 0
+    max: 200
+    step: 1
+    default: 100
+    width: 1/3
+    tooltip: "{{ value }}"
+    when:
+      hero_pattern_active: true
+
+  hero_pattern_animation_1:
+    label: Attiva Animazione Layer 1
+    type: toggle
+    width: 1/2
+    when:
+      hero_pattern_active: true
+
+  hero_pattern_text_1_alt:
+    label: Testo Alternativo Layer 1
+    type: text
+    width: 1/2
+    when:
+      hero_pattern_active: true
+      hero_pattern_animation_1: true
+
+  hero_pattern_text_2:
+    label: Testo Layer 2
+    type: text
+    width: 1/3
+    when:
+      hero_pattern_active: true
+
+  hero_pattern_color_2:
+    label: Colore Layer 2
+    type: select
+    width: 1/3
+    default: "#000000"
+    options:
+      - value: "#000000"
+        text: Nero
+      - value: "#ffffff"
+        text: Bianco
+      - value: "#4989c8"
+        text: Blu Tema
+      - value: "#6ebf9b"
+        text: Verde Tema
+      - value: "#ffe14e"
+        text: Giallo
+      - value: "#db4d39"
+        text: Rosso
+      - value: "#30407f"
+        text: Blu Scuro
+    when:
+      hero_pattern_active: true
+
+  hero_pattern_weight_2:
+    label: Peso Font Layer 2
+    type: range
+    min: 0
+    max: 200
+    step: 1
+    default: 100
+    width: 1/3
+    tooltip: "{{ value }}"
+    when:
+      hero_pattern_active: true
+
+  hero_pattern_text_3:
+    label: Testo Layer 3
+    type: text
+    width: 1/3
+    when:
+      hero_pattern_active: true
+
+  hero_pattern_color_3:
+    label: Colore Layer 3
+    type: select
+    width: 1/3
+    default: "#000000"
+    options:
+      - value: "#000000"
+        text: Nero
+      - value: "#ffffff"
+        text: Bianco
+      - value: "#4989c8"
+        text: Blu Tema
+      - value: "#6ebf9b"
+        text: Verde Tema
+      - value: "#ffe14e"
+        text: Giallo
+      - value: "#db4d39"
+        text: Rosso
+      - value: "#30407f"
+        text: Blu Scuro
+    when:
+      hero_pattern_active: true
+
+  hero_pattern_weight_3:
+    label: Peso Font Layer 3
+    type: range
+    min: 0
+    max: 200
+    step: 1
+    default: 100
+    width: 1/3
+    tooltip: "{{ value }}"
+    when:
+      hero_pattern_active: true
+  
+  hero_pattern_separator:
+    type: line
+    when:
+      hero_pattern_active: true

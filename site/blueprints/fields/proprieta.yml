@@ -1,0 +1,4 @@
+type: fields
+fields:
+  hero_pattern:
+    extends: fields/hero_pattern

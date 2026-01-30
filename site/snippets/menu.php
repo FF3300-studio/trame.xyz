@@ -52,4 +52,5 @@
     </div>
     <?php endif ?>
 </nav>
+<?php snippet('hero-pattern') ?>
 
