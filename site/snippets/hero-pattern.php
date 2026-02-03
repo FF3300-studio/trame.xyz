@@ -77,7 +77,7 @@
   .hero-pattern-layer.layer-subtitle {
      z-index: 25;
      position: absolute;
-     top: calc(var(--hero-fs) * 1.5); /* Moved down further */
+     top: calc(var(--hero-fs) * 1.7); /* Moved down further */
      left: 0;
      width: 100%;
      font-size: clamp(20px, 5vw, 50px);
