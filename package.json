@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^8.0.0",
     "bootstrap": "^5.3.8",
     "sass": "^1.93.2",
     "vite": "^6.0.3",
