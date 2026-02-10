@@ -204,8 +204,8 @@ $subtitleActive = $page->hero_pattern_subtitle_active()->isTrue();
     $cyclingId = 'hero-cycling-' . uniqid();
   ?>
   
-  <div class="hero-pattern-layer layer-subtitle" style="color: <?= $page->hero_pattern_overlay_color() ?>; font-family: 'Grid', sans-serif; font-variation-settings: 'wght' 0, 'BACK' 900, 'SHAP' 100;">
-    <span id="<?= $cyclingId ?>"><?= $cyclingWords[0] ?></span><br>
+  <div class="hero-pattern-layer layer-subtitle" style="color: <?= $page->hero_pattern_overlay_color() ?>; font-family: 'Grid', sans-serif; font-variation-settings: 'wght' 0, 'BACK' 900, 'SHAP' 100; transform: translateZ(0); -webkit-transform: translateZ(0);">
+    <span id="<?= $cyclingId ?>" style="will-change: contents; transform: translateZ(0); -webkit-transform: translateZ(0);"><?= $cyclingWords[0] ?></span><br>
     <span>di tessitura</span><br>
     <span>contemporanea</span>
   </div>
@@ -220,8 +220,12 @@ $subtitleActive = $page->hero_pattern_subtitle_active()->isTrue();
         
         setInterval(() => {
             currentIndex = (currentIndex + 1) % words.length;
+            // Force repaint hack for mobile rendering artifacts
+            element.style.opacity = '0.99'; 
+            setTimeout(() => { element.style.opacity = '1'; }, 10);
+            
             element.textContent = words[currentIndex];
-        }, 1000); // 1 second interval as generally requested for simple cycling
+        }, 1000); 
     })();
   </script>
   <?php endif; ?>
