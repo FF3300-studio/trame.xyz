@@ -2,6 +2,7 @@ import Lenis from '@studio-freight/lenis'
 import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import './text-effects.js'
+import './logotype.js'
 
 const lenis = new Lenis({
   duration: 1.2,

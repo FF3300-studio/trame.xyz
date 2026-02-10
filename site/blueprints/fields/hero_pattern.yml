@@ -232,6 +232,17 @@ fields:
     when:
       hero_pattern_active: true
 
+  hero_pattern_cycling_words:
+    label: Parole da ciclare (Sostituiscono "Scuola")
+    type: structure
+    fields:
+      word:
+        label: Parola
+        type: text
+    when:
+      hero_pattern_active: true
+      hero_pattern_subtitle_active: true
+
   hero_pattern_separator:
     type: line
     when:

@@ -12,6 +12,12 @@
   <!-- Preload dei font principali -->
   <link rel="preload" href="<?= url('assets/build/fonts/Geist-Variable.ttf') ?>" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="preload" href="<?= url('assets/build/fonts/Geist-Italic-Variable.ttf') ?>" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="<?= url('assets/build/fonts/GTLTrame1VF.ttf') ?>" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="<?= url('assets/build/fonts/GTLTrame2VF.ttf') ?>" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="<?= url('assets/build/fonts/GTLTrame3VF.ttf') ?>" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="<?= url('assets/build/fonts/GTLTrame4VF.ttf') ?>" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="<?= url('assets/build/fonts/GTLTrame5VF.ttf') ?>" as="font" type="font/ttf" crossorigin="anonymous">
+  <link rel="preload" href="<?= url('assets/build/fonts/GTLTrame6VF.ttf') ?>" as="font" type="font/ttf" crossorigin="anonymous">
 
   <?php if($site->fb_domain_verification()->isNotEmpty()): ?>
     <meta name="facebook-domain-verification" content="<?= htmlspecialchars($site->fb_domain_verification()) ?>" />

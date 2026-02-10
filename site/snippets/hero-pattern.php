@@ -190,9 +190,40 @@ $subtitleActive = $page->hero_pattern_subtitle_active()->isTrue();
 
   <!-- Layer Subtitle -->
   <?php if($subtitleActive): ?>
+  <?php 
+    $cyclingWordsStruct = $page->hero_pattern_cycling_words()->toStructure();
+    $cyclingWords = [];
+    foreach($cyclingWordsStruct as $w) {
+        $cyclingWords[] = $w->word()->value();
+    }
+    // If no words are provided, fallback to "Scuola"
+    if(empty($cyclingWords)) {
+        $cyclingWords = ['Scuola'];
+    }
+    $jsonCyclingWords = json_encode($cyclingWords);
+    $cyclingId = 'hero-cycling-' . uniqid();
+  ?>
+  
   <div class="hero-pattern-layer layer-subtitle" style="color: <?= $page->hero_pattern_overlay_color() ?>; font-family: 'Grid', sans-serif; font-variation-settings: 'wght' 0, 'BACK' 900, 'SHAP' 100;">
-    <span>Scuola di tessitura<br>contemporanea</span>
+    <span id="<?= $cyclingId ?>"><?= $cyclingWords[0] ?></span><br>
+    <span>di tessitura</span><br>
+    <span>contemporanea</span>
   </div>
+
+  <script>
+    (function() {
+        const words = <?= $jsonCyclingWords ?>;
+        const element = document.getElementById('<?= $cyclingId ?>');
+        if (words.length <= 1 || !element) return;
+        
+        let currentIndex = 0;
+        
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % words.length;
+            element.textContent = words[currentIndex];
+        }, 1000); // 1 second interval as generally requested for simple cycling
+    })();
+  </script>
   <?php endif; ?>
 
   <!-- Layer 4 (Overlay) -->

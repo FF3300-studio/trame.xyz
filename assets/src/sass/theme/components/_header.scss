@@ -72,9 +72,31 @@
 }
 
 .logotype {
-  @include typo.font-extrabold;
-  font-variation-settings: "wght" 1000;
   margin: 0;
+  display: inline-flex;
+  align-items: center;
+  font-family: "GTL Trame 1", sans-serif;
+  font-weight: 200;
+  font-variation-settings: "wght" 200;
+  
+  .logotype-initial {
+    // Inherits font settings from parent
+  }
+
+  .logotype-rest {
+    // Inherits font settings from parent
+    display: none;
+  }
+}
+
+.logotype_container:hover .logotype-rest {
+  display: inline;
+}
+
+// Force black color on hover with high specificity to override generic * selector
+.site-header .site-header-inner .logotype_container a:hover,
+.site-header .site-header-inner .logotype_container a:hover * {
+  color: $color-black !important;
 }
 
 .navbar-toggler {
