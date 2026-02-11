@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const logotype = document.querySelector('.logotype');
-    if (!logotype) return;
+    const logotypes = document.querySelectorAll('.logotype');
+    if (logotypes.length === 0) return;
 
     const fonts = [
         'GTL Trame 1',
@@ -21,8 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Random weight between 50 and 200
         const weight = Math.floor(Math.random() * (200 - 50 + 1)) + 50;
 
-        logotype.style.fontFamily = `"${font}", sans-serif`;
-        logotype.style.fontVariationSettings = `"wght" ${weight}`;
+        logotypes.forEach(logotype => {
+            logotype.style.fontFamily = `"${font}", sans-serif`;
+            logotype.style.fontVariationSettings = `"wght" ${weight}`;
+        });
     }
 
     // Run animation every 1000ms (1 second)

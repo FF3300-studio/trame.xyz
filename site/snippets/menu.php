@@ -34,6 +34,12 @@
 		  </div>
     </div>
     <div class="navigation navigation-mobile">
+      <div class="mobile-header-bar site-header-inner">
+        <?php snippet('logo-object', ['mobile' => true]); ?>
+        <div class="navbar-toggler" style="visibility: hidden;">
+          <!-- Phantom Toggler for height matching -->
+        </div>
+      </div>
       <div class="navigation-mobile-flexbox">
         <?php snippet('mobile-menuitem-list', ['items' => $items, 'accordion__item' => true]) ?>
         <?php if($site->languages_switch()->toBool()): ?>

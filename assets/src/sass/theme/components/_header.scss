@@ -49,11 +49,11 @@
       margin: 1.5vh 0; // Dynamic vertical margin
       width: fit-content;
       .title_link {
-        width: 70vw; 
+        width: fit-content; // Changed from 70vw to fit content
         text-align: center;
         display: inline-block;
-        padding: 2vh 4vw;
-        font-size: clamp(24px, 5vw, 40px); // Clamp to prevent too large text on tablets
+        padding: 1vh 4vw; // Reduced padding
+        font-size: clamp(20px, 4vw, 32px); // Reduced font size
         @include typo.font-bold; 
         color: $color-white; 
         background-color: $color-theme;
@@ -97,6 +97,42 @@
 .site-header .site-header-inner .logotype_container a:hover,
 .site-header .site-header-inner .logotype_container a:hover * {
   color: $color-black !important;
+}
+
+// Mobile Logotype Styles
+.mobile-header-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  // padding and min-height are inherited from .site-header-inner
+  background-color: transparent !important; // Override .site-header-inner background
+  // display: flex; // inherited
+  // align-items: center; // inherited
+  z-index: 2002;
+  border-bottom: none !important; // Just in case
+}
+
+.mobile-logotype {
+  margin: 0; 
+  
+  .logotype {
+    color: $color-black !important;
+    
+    .logotype-rest {
+      display: inline !important;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    
+    &:hover {
+      .logotype {
+        color: $color-black !important;
+      }
+    }
+  }
 }
 
 .navbar-toggler {
