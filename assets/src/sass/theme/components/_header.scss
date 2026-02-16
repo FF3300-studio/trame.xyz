@@ -13,11 +13,13 @@
   }
   &.navigation-mobile {
     display: none;
-    position: absolute;
+    // position: absolute; // Changed to fixed for better coverage
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh; /* Fallback for browsers that do not support dvh */
+    height: 100dvh;
     padding: $spacer-sm * 3;
     flex-direction: column;
     justify-content: center; // Changed from space-between for vertical centering

@@ -86,6 +86,12 @@ body {
     overflow: hidden !important;
     position: relative;
   }
+
+  &.no-scroll {
+    overflow: hidden !important;
+    height: 100vh;
+    height: 100dvh;
+  }
 }
 
 .blocks-container.footer {

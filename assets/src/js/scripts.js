@@ -67,15 +67,6 @@ jQuery( ".collapse-link" ).click(function() {
     console.log("collapse");
 });
 
-/* MOBILE NAVIGATION */
-
-jQuery(document).ready(function () {
-    jQuery(".navbar-toggler").click(function() {
-        jQuery(this).toggleClass("closed");
-        jQuery(".navigation-mobile").toggleClass("visible");
-    });
-});
-
 /* PASS SLIDER */
 
 jQuery(document).ready(function() {
@@ -116,29 +107,40 @@ jQuery(document).ready(function() {
     });
 });
 
-/* ITINERARI SLIDER */
+/* MOBILE NAVIGATION */
+
 document.addEventListener("DOMContentLoaded", function () {
     const toggler = document.querySelector(".navbar-toggler");
     const menu = document.querySelector(".navigation-mobile");
+    const menuLinks = document.querySelectorAll('.navigation-mobile a, .close-menu');
   
     if (toggler && menu) {
       toggler.addEventListener("click", function () {
+        toggler.classList.toggle("closed");
+        menu.classList.toggle("visible");
+        
         const isVisible = menu.classList.contains("visible");
-  
-        if (!isVisible) {
+        
+        if (isVisible) {
           document.body.classList.add("no-scroll");
+          if (typeof lenis !== 'undefined') lenis.stop();
         } else {
           document.body.classList.remove("no-scroll");
+          if (typeof lenis !== 'undefined') lenis.start();
         }
       });
-    }
-  });
 
-  document.querySelectorAll('.navigation-mobile a, .close-menu').forEach(el => {
-    el.addEventListener('click', () => {
-      document.body.classList.remove('no-scroll');
-    });
-  });
+      // Close menu when a link is clicked
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            toggler.classList.remove("closed");
+            menu.classList.remove("visible");
+            document.body.classList.remove("no-scroll");
+            if (typeof lenis !== 'undefined') lenis.start();
+        });
+      });
+    }
+});
   
   /* HEADER HEIGHT CALCULATION */
   function updateHeaderHeight() {
