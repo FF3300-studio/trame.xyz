@@ -33,6 +33,7 @@
     display: flex;
     flex-direction: column;
     flex-grow: 0;
+    padding-right: $spacer;
     background-color: $color-white !important;
     @include media-breakpoint-down(sm) {
       width: 100%;
@@ -52,6 +53,16 @@
       margin-top: math.div($spacer, 2);
       @include typo.extralarge;
       margin-bottom: math.div($spacer, 2);
+
+      @include media-breakpoint-down(sm) {
+        @include typo.large;
+      }
+    }
+
+    .time {
+      @include media-breakpoint-down(sm) {
+        font-size: $large-sm;
+      }
     }
 
     .cards-title h2{

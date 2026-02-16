@@ -38,6 +38,12 @@ hr {
     @include typo.small;
     line-height: 1.35;
   }
+  
+  p {
+    @include media-breakpoint-down(sm) {
+       font-size: $medium-sm;
+    }
+  }
   figure,
   .block-app-inner .image {
     margin: 0;
